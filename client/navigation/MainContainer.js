@@ -23,6 +23,10 @@ export default function MainContainer() {
       <Tab.Navigator
         initialRouteName={homename}
         screenOptions={({ route }) => ({
+          tabBarShowLabel: false,
+          tabBarActiveTintColor: '#6A36FF',
+          tabBarInactiveTintColor: '#CBB9FF',
+          tabBarStyle: { padding: 5, height: 50 },
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
             let rn = route.name;
@@ -44,12 +48,7 @@ export default function MainContainer() {
             return <Ionicons name={iconName} size={size} color={color} />;
           },
         })}
-        tabBarOptions={{
-          activeTintColor: '#6A36FF',
-          inactiveTintColor: '#CBB9FF',
-          labelStyle: { paddingBottom: 10, fontSize: 10 },
-          style: { padding: 10, height: 70}
-        }}>
+        >
       <Tab.Screen name={homename} component={Home} />
       <Tab.Screen name={workoutname} component={Workout} />
       <Tab.Screen name={activityname} component={Activity} />
