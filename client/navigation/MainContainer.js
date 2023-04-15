@@ -2,12 +2,10 @@ import * as React from "react";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 // Screens
 import Home from "./screens/Home";
-import Workout from "./screens/Workout";
+import Workout from "./screens/workout_nav";
 import Activity from "./screens/Activity";
 import Profile from "./screens/Profile";
 
