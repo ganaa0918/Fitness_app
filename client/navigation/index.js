@@ -8,6 +8,7 @@ import Home from "../views/Home";
 import Workout from "../views/workout_nav";
 import Activity from "../views/Activity";
 import Profile from "../views/Profile";
+import Login from "../views/Login";
 const Tab = createBottomTabNavigator();
 
 export default function MainContainer() {
@@ -52,6 +53,7 @@ export default function MainContainer() {
         },
       })}
     >
+      <Tab.Screen name="Login" component={Login} />
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Workout" component={Workout} />
       <Tab.Screen name="Activity" component={Activity} />
