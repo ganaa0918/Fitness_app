@@ -5,7 +5,10 @@ import Tseej from './athome_pics/tseej.png';
 import Nuruu from './athome_pics/nuruu.png';
 import Gedes from './athome_pics/gedes.png';
 import Costum from './athome_pics/athome_costom.png';
-
+const onPressHandler = () => {
+  // perform the desired action
+  console.log('Button pressed!');
+};
 const AtHome = () => {
   return (
     <View style={styles.container}>
@@ -26,20 +29,24 @@ const AtHome = () => {
         <Text style={styles.text2}>Body focus</Text>
       </View>
       <View style={styles.twoColumn}>
-        <Image source={Tseej} style={styles.image} />
-        <Image source={Nuruu} style={styles.image} />
-        {/* <Image source={Gedes} style={styles.image} />
-        <Image source={Hol} style={styles.image} /> */}
+        <TouchableOpacity style={styles.image}>
+        <Image source={Tseej}  />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.image}>
+        <Image source={Nuruu}  />
+        </TouchableOpacity>
       </View>
       <View style={styles.twoColumn2}>
       <Text style={styles.text3}>Цээж {"\n"} <Text style={styles.greyText}>12 дасгал</Text></Text>
       <Text style={styles.text4}>Нуруу{"\n"}<Text style={styles.greyText}>12 дасгал</Text></Text>
       </View>
       <View style={styles.twoColumn}>
-        <Image source={Hol} style={styles.image} />
-        <Image source={Gedes} style={styles.image} />
-        {/* <Image source={Gedes} style={styles.image} />
-        <Image source={Hol} style={styles.image} /> */}
+      <TouchableOpacity style={styles.image}>
+        <Image source={Hol}  />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.image}>
+        <Image source={Gedes}  />
+        </TouchableOpacity>
       </View>
       <View style={styles.twoColumn2}>
       <Text style={styles.text3}>Хөл {"\n"} <Text style={styles.greyText}>12 дасгал</Text></Text>
@@ -59,7 +66,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 5,
+    padding: 10,
   },
   costumContainer: {
     position: 'relative',
@@ -100,14 +107,13 @@ const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     padding:0,
-    paddingHorizontal: 10,
+    paddingHorizontal: 15,
     justifyContent:'space-between',
-
+    paddingBottom: 10,
   },
   image: {
     width: '48%',
-    height: 150,
-    marginBottom: 0,
+    height: 130,
     resizeMode: 'contain',
   },text: {
     fontSize: 16,
@@ -145,9 +151,6 @@ const styles = StyleSheet.create({
     color: 'black',
     paddingLeft: 10,
     paddingBottom: 5,
-  },
-  text3: {
-
   },
   text4: {
     right: 110,
