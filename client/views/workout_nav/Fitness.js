@@ -5,7 +5,7 @@ import Tseej2 from './athome_pics/fitness_gym.png'
 import Nuruu2 from './athome_pics/fitness_nuruu.png'
 import Mor from './athome_pics/fitness_mor.png'
 import Hol2 from './athome_pics/fitness_hol.png'
-function Fitness() {
+function Fitness({navigation}) {
   return (
     <View style={styles.container}>
       <ScrollView>

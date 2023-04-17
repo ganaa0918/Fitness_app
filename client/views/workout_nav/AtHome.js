@@ -9,13 +9,15 @@ const onPressHandler = () => {
   // perform the desired action
   console.log('Button pressed!');
 };
-const AtHome = () => {
+const AtHome = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.fullWidth}>
         <View style={styles.costumContainer}>
           <Image source={Costum} style={styles.costumImage} />
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate('Home')}>
             <Text style={styles.buttonText}>Эхлэх</Text>
           </TouchableOpacity>
           <View style={styles.textContainer}>

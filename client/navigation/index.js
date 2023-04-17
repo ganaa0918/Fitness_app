@@ -4,11 +4,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { FontAwesome5 } from '@expo/vector-icons';
 // Screens
-import Home from "./screens/Home";
-import Workout from "./screens/workout_nav";
-import Activity from "./screens/Activity";
-import Profile from "./screens/Profile";
-
+import Home from "../views/Home";
+import Workout from "../views/workout_nav";
+import Activity from "../views/Activity";
+import Profile from "../views/Profile";
 const Tab = createBottomTabNavigator();
 
 export default function MainContainer() {
