@@ -15,14 +15,13 @@ const Restore = () => {
   }
   return (
     <View style={styles.container}>
-      <TouchableOpacity
+       <TouchableOpacity
         style={styles.roundButton1}>
         <Text>{icon}</Text>
       </TouchableOpacity>
-      <View style={styles.head}>
         <Text style={styles.bigTxt}>Нууц үг мартсан?</Text>
-        <Text style={{marginTop:20, color:'#938E8E'}}>Та имейл хаягаа үлдээнэ үү. Бид нууц үгийг тань илгээх болно</Text>
-      </View>
+        <Text style={styles.smalltxt}>Та имейл хаягаа үлдээнэ үү. Бид нууц үгийг тань илгээх болно</Text>
+      
       <TextInput
         style={styles.input}
         onChangeText={text => setEmail(text)}
@@ -42,10 +41,19 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left:44,
     top:120,
-    fontFamily: 'Inter',
   },
   bigTxt: {
     fontSize:28,
+    position:'absolute',
+    right:150,
+    top:150,
+  },
+  smalltxt: {
+    marginTop:20,
+    color:'#938E8E',
+    position:'absolute',
+    right:50,
+    top:175,
   },
   roundButton1: {
     width: 35,

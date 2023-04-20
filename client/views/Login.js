@@ -2,7 +2,6 @@ import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, fontFamily} from 'react-native'
 import { useState } from 'react'
 import { CheckBox } from 'react-native-web'
-import {useNavigate} from "react-router-dom"
 
 const Login = ({navigation}) => {
   const [email, setEmail] = useState('')
@@ -21,17 +20,17 @@ const Login = ({navigation}) => {
         style={styles.roundButton1}>
         <Text>{icon}</Text>
       </TouchableOpacity>
-        
-      <View style={styles.head} 
-       >
-        <Text style={styles.bigTxt} >Нэвтрэх</Text>
+       <View >
+        <Text  >Нэвтрэх</Text>
       </View>
+      
       <TextInput
         style={styles.input}
         onChangeText={text => setEmail(text)}
         value={email}
         placeholder="Цахим шуудан"
       />
+      
       <TextInput
         style={styles.input}
         onChangeText={text => setPassword(text)}
@@ -39,7 +38,8 @@ const Login = ({navigation}) => {
         placeholder="Нууц үг"
         secureTextEntry={isSelected ? false : true}
       />
-      <View style={styles.checkboxContainer}>
+      {/* TODO checkbox zasah */}
+      {/* <View style={styles.checkboxContainer}>
 
         <CheckBox
           value={isSelected}
@@ -47,12 +47,12 @@ const Login = ({navigation}) => {
           style={styles.check}
         />
         <Text style={styles.txt}>Нууц үг харах</Text>
-      </View>
-      <TouchableOpacity style={styles.loginBtn} onPress={()=>navigation.navigate('MainContainer')}>
+      </View> */}
+      
+      <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate("MainContainer")} >
         <Text style={styles.loginText}>Нэвтрэх</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate("Restore")}>
-      {/* <TouchableOpacity> */}
         <Text style={styles.forgot_button}>Нууц үгээ мартсан уу?</Text>
       </TouchableOpacity>
       <TouchableOpacity>
@@ -68,7 +68,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left:44,
     top:120,
-    fontFamily: 'Inter',
   },
   bigTxt: {
     fontSize:28,
@@ -116,7 +115,6 @@ const styles = StyleSheet.create({
   },
   txt: {
     paddingLeft: 10,
-    fontfamily: 'Inter',
   },
   forgot_button: {
     height: 30,
