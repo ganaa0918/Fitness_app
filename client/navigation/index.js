@@ -53,7 +53,7 @@ export default function MainContainer() {
         },
       })}
     >
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Home" component={Home}  />
       <Tab.Screen name="Workout" component={Workout} />
       <Tab.Screen name="Activity" component={Activity} />
       <Tab.Screen name="Profile" component={Profile} />
