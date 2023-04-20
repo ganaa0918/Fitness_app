@@ -13,7 +13,7 @@ const Tab = createBottomTabNavigator();
 
 export default function MainContainer() {
   return (
-    <NavigationContainer>
+    <NavigationContainer independent={true}>
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
@@ -53,7 +53,6 @@ export default function MainContainer() {
         },
       })}
     >
-      <Tab.Screen name="Login" component={Login} />
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Workout" component={Workout} />
       <Tab.Screen name="Activity" component={Activity} />

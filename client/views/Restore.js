@@ -2,11 +2,10 @@ import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, fontFamily} from 'react-native'
 import { useState } from 'react'
 import { CheckBox } from 'react-native-web'
-import {useNavigate} from "react-router-dom"
 
-const Login = () => {
+const Restore = () => {
   const [email, setEmail] = useState('')
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const icon = "<"
 
   const handleResume = () => {
@@ -22,7 +21,7 @@ const Login = () => {
       </TouchableOpacity>
       <View style={styles.head}>
         <Text style={styles.bigTxt}>Нууц үг мартсан?</Text>
-        <Text style={{marginTop:20, color:'#938E8E'}}>Та имейл хаягаа үлдээнэ үү. Бид нууц үгийг тань иилгээх болно</Text>
+        <Text style={{marginTop:20, color:'#938E8E'}}>Та имейл хаягаа үлдээнэ үү. Бид нууц үгийг тань илгээх болно</Text>
       </View>
       <TextInput
         style={styles.input}
@@ -90,4 +89,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Login
+export default Restore

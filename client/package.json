@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^13.0.0",
+    "@expo/webpack-config": "^18.0.1",
     "@react-navigation/bottom-tabs": "^6.5.7",
     "@react-navigation/material-top-tabs": "^6.6.2",
     "@react-navigation/native": "^6.1.6",
@@ -17,15 +18,15 @@
     "expo": "~48.0.10",
     "expo-status-bar": "~1.4.4",
     "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-native": "0.71.6",
     "react-native-ionicons": "^4.6.5",
     "react-native-pager-view": "6.1.2",
     "react-native-tab-view": "^3.5.1",
     "react-native-vector-icons": "^9.2.0",
-    "tailwindcss-react-native": "^1.7.10",
-    "react-native-web": "~0.18.10",
-    "react-dom": "18.2.0",
-    "@expo/webpack-config": "^18.0.1"
+    "react-native-web": "^0.18.12",
+    "react-router-dom": "^6.10.0",
+    "tailwindcss-react-native": "^1.7.10"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

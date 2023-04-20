@@ -4,11 +4,10 @@ import { useState } from 'react'
 import { CheckBox } from 'react-native-web'
 import {useNavigate} from "react-router-dom"
 
-const Login = () => {
+const Login = ({navigation}) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isSelected, setSelection] = useState('')
-  const navigate = useNavigate()
   const icon = "<"
 
   const handleLogin = () => {
@@ -22,8 +21,10 @@ const Login = () => {
         style={styles.roundButton1}>
         <Text>{icon}</Text>
       </TouchableOpacity>
-      <View style={styles.head}>
-        <Text style={styles.bigTxt}>Нэвтрэх</Text>
+        
+      <View style={styles.head} 
+       >
+        <Text style={styles.bigTxt} >Нэвтрэх</Text>
       </View>
       <TextInput
         style={styles.input}
@@ -47,10 +48,11 @@ const Login = () => {
         />
         <Text style={styles.txt}>Нууц үг харах</Text>
       </View>
-      <TouchableOpacity style={styles.loginBtn}>
+      <TouchableOpacity style={styles.loginBtn} onPress={()=>navigation.navigate('MainContainer')}>
         <Text style={styles.loginText}>Нэвтрэх</Text>
       </TouchableOpacity>
-      <TouchableOpacity onClick={() => navigate("/Restore")}>
+      <TouchableOpacity onPress={() => navigation.navigate("Restore")}>
+      {/* <TouchableOpacity> */}
         <Text style={styles.forgot_button}>Нууц үгээ мартсан уу?</Text>
       </TouchableOpacity>
       <TouchableOpacity>
