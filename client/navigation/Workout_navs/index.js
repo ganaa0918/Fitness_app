@@ -1,11 +1,9 @@
 import * as React from "react";
 import {  Text } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-
 const Tab = createMaterialTopTabNavigator();
-
-import Fitness from "./Fitness";
-import AtHome from "./AtHome";
+import Fitness from "../../views/workout_nav/Fitness";
+import AtHome from "../../views/workout_nav/AtHome";
 export default function Workout() {
   const screenOptions = ({ route }) => ({
     tabBarActiveTintColor: '#000000', // Change the active tab color
@@ -21,8 +19,9 @@ export default function Workout() {
     tabBarShowLabel: true,
   });
   return (
-    <Tab.Navigator screenOptions={screenOptions}>
-      <Tab.Screen name="Гэртээ" component={AtHome} />
+    
+    <Tab.Navigator screenOptions={screenOptions} initialRouteName="Гэртээ" independent={true}>
+      <Tab.Screen name="Гэртээ" component={AtHome} options={{ headerShown: false, tabBarLabel:'New' }} />
       <Tab.Screen name="Фитнеcc" component={Fitness} />
     </Tab.Navigator>
     )

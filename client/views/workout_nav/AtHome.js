@@ -5,11 +5,13 @@ import Tseej from './athome_pics/tseej.png';
 import Nuruu from './athome_pics/nuruu.png';
 import Gedes from './athome_pics/gedes.png';
 import Costum from './athome_pics/athome_costom.png';
-const onPressHandler = () => {
-  // perform the desired action
-  console.log('Button pressed!');
-};
-const AtHome = ({navigation}) => {
+import { useNavigation } from '@react-navigation/native';
+function AtHome () {
+const navigation= useNavigation();
+
+  const goToSecondScreen = () => {
+    navigation.navigate('Exercises');
+  };
   return (
     <View style={styles.container}>
       <View style={styles.fullWidth}>
@@ -31,7 +33,7 @@ const AtHome = ({navigation}) => {
         <Text style={styles.text2}>Body focus</Text>
       </View>
       <View style={styles.twoColumn}>
-        <TouchableOpacity style={styles.image}>
+        <TouchableOpacity style={styles.image} onPress={goToSecondScreen}>
         <Image source={Tseej}  />
         </TouchableOpacity>
         <TouchableOpacity style={styles.image}>
