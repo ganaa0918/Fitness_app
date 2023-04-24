@@ -7,7 +7,7 @@
   // Screens
   import Home from "../views/Home";
   import Workout from "./Workout_navs";
-  import Activity from "../views/Activity";
+  import Activity from "./Activity_navs";
   import Profile from "../views/Profile";
   import Exercises from "../views/workout_nav/Exercises";
   const Tab = createBottomTabNavigator();
