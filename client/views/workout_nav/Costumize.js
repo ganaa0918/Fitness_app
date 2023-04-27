@@ -5,8 +5,6 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import {LinearGradient} from 'expo-linear-gradient'
 
 import Costumizeimg from './athome_pics/costumize.png'
-
-
 function Costumize() {
     const navigation = useNavigation();
     const Goback = () => {
