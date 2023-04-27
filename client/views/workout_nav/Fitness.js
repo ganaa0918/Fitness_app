@@ -5,7 +5,10 @@ import Tseej2 from './athome_pics/fitness_gym.png'
 import Nuruu2 from './athome_pics/fitness_nuruu.png'
 import Mor from './athome_pics/fitness_mor.png'
 import Hol2 from './athome_pics/fitness_hol.png'
-function Fitness({navigation}) {
+function Fitness({navigation, }) {
+  const PressTseej = ()=>{
+    navigation.navigate('UserScreen')
+  }
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -18,7 +21,7 @@ function Fitness({navigation}) {
           </TouchableOpacity>
         </View>
         <View style={styles.costumContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={PressTseej}>
         <Image source={Tseej2} style={{alignSelf: 'center'}} />
         <Text style={styles.button2}>Цээжний дасгал</Text>
         <Text style={styles.textfit}>Фитнэсс дасгал</Text>

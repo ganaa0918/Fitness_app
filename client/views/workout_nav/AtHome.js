@@ -19,7 +19,7 @@ const navigation= useNavigation();
           <Image source={Costum} style={styles.costumImage} />
           <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('Home')}>
+          onPress={() => navigation.navigate('Costumize')}>
             <Text style={styles.buttonText}>Эхлэх</Text>
           </TouchableOpacity>
           <View style={styles.textContainer}>
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'left',
     paddingLeft: 10,
-    paddingBottom: 10,
+    paddingBottom: 20,
   },
   bigText: {
     fontSize: 20,
