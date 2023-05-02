@@ -3,17 +3,18 @@ import { View, Text, StyleSheet, TouchableOpacity, TextInput, fontFamily} from '
 import { useState } from 'react'
 import { CheckBox } from 'react-native-web'
 
-const Login = ({navigation}) => {
+
+export default function SignUp({route, navigation}) {
+  
+  const [text, onChangeText] = React.useState('Useless Text');
+  const [ner, setNer] = useState('')
+  const [phone, setPhone] = useState('')
+  const [isSelected, setSelection] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [isSelected, setSelection] = useState('')
   const icon = "<"
 
-  const handleLogin = () => {
-    // Энд пассворд имейлээ шалгана
-    // if (1 == 1)
-    //     navigation.navigate('Home')
-  }
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -21,16 +22,27 @@ const Login = ({navigation}) => {
         <Text>{icon}</Text>
       </TouchableOpacity>
        <View >
-        <Text  >Нэвтрэх</Text>
+        <Text style={styles.GoyGarchig} >Аккаунт бүртгүүлэх</Text>
       </View>
       
       <TextInput
         style={styles.input}
+        onChangeText={text => setNer(text)}
+        value={ner}
+        placeholder="Нэр"
+      />
+      <TextInput
+        style={styles.input}
+        onChangeText={text => setPhone(text)}
+        value={phone}
+        placeholder="Утасны дугаар"
+      />
+      <TextInput
+        style={styles.input}
         onChangeText={text => setEmail(text)}
         value={email}
-        placeholder="Цахим шуудан"
+        placeholder="Email"
       />
-      
       <TextInput
         style={styles.input}
         onChangeText={text => setPassword(text)}
@@ -38,30 +50,17 @@ const Login = ({navigation}) => {
         placeholder="Нууц үг"
         secureTextEntry={isSelected ? false : true}
       />
-      {/* TODO checkbox zasah */}
-      {/* <View style={styles.checkboxContainer}>
-
-        <CheckBox
-          value={isSelected}
-          onValueChange={setSelection}
-          style={styles.check}
-        />
-        <Text style={styles.txt}>Нууц үг харах</Text>
-      </View> */}
+     
       
-      <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate("MainContainer")} >
-        <Text style={styles.loginText}>Нэвтрэх</Text>
+      <TouchableOpacity style={styles.signBtn} onPress={() => navigation.navigate("BiyiinJin")} >
+        <Text style={styles.signText}>Бүртгүүлэх</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("Restore")}>
-        <Text style={styles.forgot_button}>Нууц үгээ мартсан уу?</Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Text style={styles.signin_button} onPress={() => navigation.navigate("SignUp")}>Хэрэв аккаунт байхгүй бол бүртгүүлэх</Text>
+      <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+        <Text style={styles.have_account}>Хэрвээ аккаунт байгаа бол энд дарж Нэвтэнэ үү.</Text>
       </TouchableOpacity>
     </View>
-  )
+  );
 }
-
 const styles = StyleSheet.create({
   head: {
     alignItems:'left',
@@ -116,13 +115,13 @@ const styles = StyleSheet.create({
   txt: {
     paddingLeft: 10,
   },
-  forgot_button: {
+  have_account: {
     height: 30,
     marginBottom: 30,
     color: '#228694',
     marginTop: 30
   },
-  loginBtn: {
+  signBtn: {
     width: "70%",
     borderRadius: 15,
     height: 50,
@@ -131,16 +130,15 @@ const styles = StyleSheet.create({
     marginTop: 40,
     backgroundColor: "#6358E1",
   },
-  loginText: {
+  signText: {
     color: 'white',
     fontSize: 20,
   },
-  signin_button: {
-    color: 'grey',
-    fontSize: 11,
-    position: 'relative',
-    top:150,
+  GoyGarchig:{
+    fontSize:28,
+    paddingBottom:20
+ 
   }
-})
+ 
+});
 
-export default Login
