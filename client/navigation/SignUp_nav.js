@@ -3,16 +3,16 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from '../views/Login';
 import Restore from '../views/Restore';
 import SignUp from '../views/SignUp';
-import MainContainer from '.';
 import BiyiinJin from '../views/JinTootsoh/BiyiinJin';
 import BiyiinJin2 from '../views/JinTootsoh/BiyiinJin2';
 import BiyiinJin3 from '../views/JinTootsoh/BiyiinJin3';
 import BiyiinJin4 from '../views/JinTootsoh/BiyiinJin4';
+import MainContainer from '.';
 const Stack = createNativeStackNavigator();
 
-function Login_nav({ navigation, route }) {
+function SignUp_nav({ navigation, route }) {
   return (
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="SignUp">
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
         <Stack.Screen name="Restore" component={Restore} options={{ headerShown: false }} />
         <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} />
@@ -25,4 +25,4 @@ function Login_nav({ navigation, route }) {
   )
 }
 
-export default Login_nav
+export default SignUp_nav

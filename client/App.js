@@ -13,6 +13,11 @@ import PreTseej from './views/workout_nav/IsPremuim/PreTseej';
 import Log from './views/ehlels/Log';
 import Ehlel2 from './views/ehlels/Ehlel2';
 import Ehlel1 from './views/ehlels/Ehlel1';
+import SignUp_nav from "./navigation/SignUp_nav";
+import BiyiinJin_nav from "./navigation/JinTootsoh_nav/BiyiinJin_nav";
+import BiyiinJin2_nav from "./navigation/JinTootsoh_nav/BiyiinJin2_nav";
+import BiyiinJin3_nav from "./navigation/JinTootsoh_nav/BiyiinJin3_nav";
+import BiyiinJin4_nav from "./navigation/JinTootsoh_nav/BiyiinJin4_nav";
 
 const Stack = createNativeStackNavigator();
 
@@ -50,6 +55,11 @@ function App() {
         <Stack.Screen name="Login_nav" component={LoginNav} options={{ headerShown: false, animation:'fade' }} />
         <Stack.Screen name="Exercises" component={Exercises} options={{ headerShown: false }} />
         <Stack.Screen name="Costumize" component={Costumize} options={{ headerShown: false }} />
+        <Stack.Screen name="SignUp_nav" component={SignUp_nav} options={{headerShown: false}} />
+        <Stack.Screen name="BiyiinJin_nav" component={BiyiinJin_nav} options={{headerShown: false}} />
+        <Stack.Screen name="BiyiinJin2_nav" component={BiyiinJin2_nav} options={{headerShown: false}} />
+        <Stack.Screen name="BiyiinJin3_nav" component={BiyiinJin3_nav} options={{ headerShown: false }} />
+        <Stack.Screen name="BiyiinJin4_nav" component={BiyiinJin4_nav} options={{ headerShown: false }} />
         <Stack.Screen
           name="UserScreen"
           component={UserScreen}
