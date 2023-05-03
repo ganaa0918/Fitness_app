@@ -2,8 +2,9 @@ import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, fontFamily} from 'react-native'
 import { useState } from 'react'
 import { CheckBox } from 'react-native-web'
-
-const Login = ({navigation}) => {
+import { useNavigation } from '@react-navigation/native'
+const Login = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isSelected, setSelection] = useState('')
@@ -14,9 +15,12 @@ const Login = ({navigation}) => {
     // if (1 == 1)
     //     navigation.navigate('Home')
   }
+  const onPressback =()=>{
+    navigation.goBack()
+  }
   return (
     <View style={styles.container}>
-      <TouchableOpacity
+      <TouchableOpacity onPress={onPressback}
         style={styles.roundButton1}>
         <Text>{icon}</Text>
       </TouchableOpacity>
