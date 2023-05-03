@@ -2,10 +2,10 @@ import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image} from 'react-native'
 import { useState } from 'react'
 import { CheckBox } from 'react-native-web'
-import jin4 from "/Users/namuundari/Documents/mobile/git Biy daalt/my-folder/Fitness_app/client/views/SignUpZurag/Biyiinjin4.png"
+import jin4 from "../SignUpZurag/Biyiinjin4.png"
+import { useNavigation } from 'react-router-dom'
 
-
-export default function BiyiinJin4({route, navigation}) {
+export default function BiyiinJin4({route}) {
   
   const [text, onChangeText] = React.useState('Useless Text');
   const [date, setDate] = useState('')
@@ -13,7 +13,10 @@ export default function BiyiinJin4({route, navigation}) {
   const [undur, setUndur] = useState('')
   const [huis, setHuis] = useState('')
   const icon = "<"
-
+  const navigation = useNavigation();
+  const onPressBack = ()=> {
+    navigation.goBack();
+  }
 
   return (
     <View style={styles.container}>
@@ -26,7 +29,7 @@ export default function BiyiinJin4({route, navigation}) {
       </View>
       
       <TouchableOpacity
-        style={styles.roundButton1}>
+        style={styles.roundButton1} onPress={onPressBack}>
         <Text>{icon}</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.signBtn} onPress={() => navigation.navigate("MainContainer")} >

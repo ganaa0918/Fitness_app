@@ -3,10 +3,10 @@ import {View, Text, StyleSheet,Image,TouchableOpacity} from 'react-native'
 import Ehlel3 from './ehlel/ehlel3.png'
 const Log = ({navigation})=> {
     onPressregister =() =>{
-        navigation.navigate('#')
+        navigation.navigate('SignUp')
     }
     onPressLogin =() =>{
-        navigation.navigate('Login_nav')
+        navigation.navigate('Login')
     }
     return(
         <View style={styles.container} >

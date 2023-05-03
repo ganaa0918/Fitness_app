@@ -2,9 +2,9 @@ import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image} from 'react-native'
 import { useState } from 'react'
 import { CheckBox } from 'react-native-web'
+import { useNavigation } from '@react-navigation/native'
 
-
-export default function BiyiinJin3({route, navigation}) {
+export default function BiyiinJin3({route}) {
   
   const [text, onChangeText] = React.useState('Useless Text');
   const [date, setDate] = useState('')
@@ -12,7 +12,10 @@ export default function BiyiinJin3({route, navigation}) {
   const [undur, setUndur] = useState('')
   const [huis, setHuis] = useState('')
   const icon = "<"
-
+  const navigation = useNavigation();
+  const onPressBack = ()=> {
+    navigation.goBack();
+  }
 
   return (
     <View style={styles.container}>
@@ -21,7 +24,8 @@ export default function BiyiinJin3({route, navigation}) {
       </View>
       
       <TouchableOpacity
-        style={styles.roundButton1}>
+        style={styles.roundButton1}
+        onPress={onPressBack}>
         <Text>{icon}</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.signBtn} onPress={() => navigation.navigate("BiyiinJin4")} >

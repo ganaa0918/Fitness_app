@@ -2,10 +2,10 @@ import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, fontFamily} from 'react-native'
 import { useState } from 'react'
 import { CheckBox } from 'react-native-web'
+import { useNavigation } from '@react-navigation/native'
 
+export default function SignUp({route}) {
 
-export default function SignUp({route, navigation}) {
-  
   const [text, onChangeText] = React.useState('Useless Text');
   const [ner, setNer] = useState('')
   const [phone, setPhone] = useState('')
@@ -13,18 +13,21 @@ export default function SignUp({route, navigation}) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const icon = "<"
-
+  const navigation = useNavigation();
+  const OnPressBack=()=>{
+    navigation.goBack();
+  }
 
   return (
     <View style={styles.container}>
       <TouchableOpacity
+        onPress={OnPressBack}
         style={styles.roundButton1}>
         <Text>{icon}</Text>
       </TouchableOpacity>
        <View >
         <Text style={styles.GoyGarchig} >Аккаунт бүртгүүлэх</Text>
       </View>
-      
       <TextInput
         style={styles.input}
         onChangeText={text => setNer(text)}
@@ -50,8 +53,6 @@ export default function SignUp({route, navigation}) {
         placeholder="Нууц үг"
         secureTextEntry={isSelected ? false : true}
       />
-     
-      
       <TouchableOpacity style={styles.signBtn} onPress={() => navigation.navigate("BiyiinJin")} >
         <Text style={styles.signText}>Бүртгүүлэх</Text>
       </TouchableOpacity>
@@ -137,8 +138,8 @@ const styles = StyleSheet.create({
   GoyGarchig:{
     fontSize:28,
     paddingBottom:20
- 
+
   }
- 
+
 });
 

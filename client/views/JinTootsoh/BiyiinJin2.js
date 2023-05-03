@@ -2,19 +2,20 @@ import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image} from 'react-native'
 import { useState } from 'react'
 import { CheckBox } from 'react-native-web'
-import hi1 from '/Users/namuundari/Documents/mobile/git Biy daalt/my-folder/Fitness_app/client/views/SignUpZurag/heviinGUY.png';
+import hi1 from '../SignUpZurag/heviinGUY.png';
+import { useNavigation } from '@react-navigation/native';
 
-
-export default function BiyiinJin2({route, navigation}) {
-  
+export default function BiyiinJin2({route}) {
   const [text, onChangeText] = React.useState('Useless Text');
   const [date, setDate] = useState('')
   const [jin, setJin] = useState('')
   const [undur, setUndur] = useState('')
   const [huis, setHuis] = useState('')
   const icon = "<"
-
-
+  const navigation = useNavigation();
+  const onPressBack = ()=> {
+    navigation.goBack();
+  }
   return (
     <View style={styles.container}>
       <View >
@@ -22,13 +23,12 @@ export default function BiyiinJin2({route, navigation}) {
       </View>
       <Image source={hi1} style={{width:280,height:430}} />
       <TouchableOpacity
-        style={styles.roundButton1}>
+        style={styles.roundButton1} onPress={onPressBack}>
         <Text>{icon}</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.signBtn} onPress={() => navigation.navigate("BiyiinJin3")} >
         <Text style={styles.signText}>Үргэлжлүүлэх</Text>
       </TouchableOpacity>
-      
     </View>
   );
 }
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   txt: {
     paddingBottom: 30,
   },
-  
+
   signBtn: {
     width: "70%",
     borderRadius: 15,
@@ -113,6 +113,6 @@ const styles = StyleSheet.create({
     paddingTop:10,
     resizeMode:'contain'
   }
- 
+
 });
 
