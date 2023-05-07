@@ -2,12 +2,16 @@ import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, fontFamily} from 'react-native'
 import { useState } from 'react'
 import { CheckBox } from 'react-native-web'
-
+import { useNavigation } from '@react-navigation/native'
 const Restore = () => {
+  const navigation = useNavigation();
+
   const [email, setEmail] = useState('')
   // const navigate = useNavigate()
   const icon = "<"
-
+  const PressBack =()=>{
+    navigation.goBack();
+  }
   const handleResume = () => {
     // Энд пассворд имейлээ шалгана
     // if (1 == 1)
@@ -16,6 +20,7 @@ const Restore = () => {
   return (
     <View style={styles.container}>
        <TouchableOpacity
+       onPress={PressBack}
         style={styles.roundButton1}>
         <Text>{icon}</Text>
       </TouchableOpacity>
