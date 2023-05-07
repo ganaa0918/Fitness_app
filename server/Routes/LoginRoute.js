@@ -1,41 +1,37 @@
 const express = require('express')
-const mongoose = require('mongoose')
-const jwt = require('jsonwebtoken')
-const {jwtkey} = require('../keys')
+const bodyParser1234 = require('body-parser')
 const router = express.Router();
-const User = mongoose.model('User');
+const { MongoClient } = require("mongodb");
+const uri = require('../MongodbconnUrl');
+router.use(bodyParser1234.json())
+const uri1 = 'mongodb+srv://tuguldur1202:gunj8878@cluster0.whifwho.mongodb.net/?retryWrites=true&w=majority'
 
 
-router.post('/signup',async (req,res)=>{
-   
-    const {email,password} = req.body;
-    try{
-      const user = new User({email,password});
-      await user.save();
-    }catch(err){
-      return res.status(422).send(err.message)
-    }
-    
-})
+router.route('/Login').post(function (req, res) {
 
-router.post('/signin',async (req,res)=>{
-    const {email,password} = req.body
-    if(!email || !password){
-        return res.status(422).send({error :"must provide email or password"})
+  async function run() {
+    const client = new MongoClient(uri1);
+    try {
+      console.log(req.body);
+      const database = client.db('Fitness');
+      const Cus = database.collection('Customer');
+      if (req.body.email != null && req.body.password != null) {
+        const query = { username: req.body.email };
+        console.log(query);
+          const Customer = await Cus.findOne(query);
+        if(Customer.password === req.body.password ) { 
+          res.send( Customer._id);
+        } }
+      else {
+        res.status(404).send(alert('amjiltgui'));
+      }
+    } finally {
+      await client.close();
     }
-    const user = await User.findOne({email})
-    if(!user){
-        return res.status(422).send({error :"must provide email or password"})
-    }
-    try{
-      await user.comparePassword(password);    
-      const token = jwt.sign({userId:user._id},jwtkey)
-      res.send({token})
-    }catch(err){
-        return res.status(422).send({error :"must provide email or password"})
-    }
-    
-})
+  }
+  run().catch(console.dir);
+
+});
 
 
 module.exports = router

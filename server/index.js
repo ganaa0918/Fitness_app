@@ -1,13 +1,17 @@
 const express = require("express")
-const bodyParser = require('body-parser')
-
+const brfjeiufj = require('body-parser')
+const { MongoClient } = require("mongodb");
 const app = express()
 const PORT = 3000
-const {mongoUrl} = require('./keys')
-const WorkoutRoute = require("")
+
+const uri1 = 'mongodb+srv://tuguldur1202:gunj8878@cluster0.whifwho.mongodb.net/?retryWrites=true&w=majority'
+const WorkoutRoute = require('./Routes/LoginRoute')
 app.use(WorkoutRoute)
-app.use(bodyParser.json())
-app.get('/', (req, res) =>  { 
+app.use(brfjeiufj.json())
+
+
+app.post('/', (req, res) =>  { 
+    console.log(req.body);
     res.send('hello');
 })
 

@@ -1,3 +1,3 @@
 module.exports = { 
-    MongoUrl : ' mogoUrl:"put your mongo url here",'
+    MongoUrl : ' mongodb+srv://tuguldur1202:gunj8878@cluster0.whifwho.mongodb.net/?retryWrites=true&w=majority'
 }
