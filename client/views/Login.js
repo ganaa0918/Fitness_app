@@ -11,9 +11,18 @@ const Login = () => {
   const icon = "<"
 
   const handleLogin = () => {
-    // Энд пассворд имейлээ шалгана
-    // if (1 == 1)
-    //     navigation.navigate('Home')
+    fetch('http://10.0.2.2:3000/Login' , 
+    {
+      method: 'post' ,
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({ email, password})
+      
+    }
+    ).then(data => data.json()).then(data => {
+      navigation.navigate("MainContainer")
+      })
+      // todo catch hiiged aldaanii message goy gargad bolh 
+      // todo newterch orood notf message goy gargdag bolh 
   }
   const onPressback =()=>{
     navigation.goBack()
@@ -53,7 +62,7 @@ const Login = () => {
         <Text style={styles.txt}>Нууц үг харах</Text>
       </View> */}
       
-      <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate("MainContainer")} >
+      <TouchableOpacity style={styles.loginBtn} onPress={() => handleLogin()} >
         <Text style={styles.loginText}>Нэвтрэх</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate("Restore")}>
