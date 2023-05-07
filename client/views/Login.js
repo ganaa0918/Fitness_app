@@ -11,18 +11,18 @@ const Login = () => {
   const icon = "<"
 
   const handleLogin = () => {
-    fetch('http://10.0.2.2:3000/Login' , 
-    {
-      method: 'post' ,
-      headers: { 'Content-Type': 'application/json'},
-      body: JSON.stringify({ email, password})
-      
-    }
-    ).then(data => data.json()).then(data => {
+    //Todo zasah
+    // fetch('http://10.0.2.2:3000/Login' ,
+    // {
+    //   method: 'post' ,
+    //   headers: { 'Content-Type': 'application/json'},
+    //   body: JSON.stringify({ email, password})
+    // }
+    // ).then(data => data.json()).then(data => {
       navigation.navigate("MainContainer")
-      })
-      // todo catch hiiged aldaanii message goy gargad bolh 
-      // todo newterch orood notf message goy gargdag bolh 
+      // })
+      // todo catch hiiged aldaanii message goy gargad bolh
+      // todo newterch orood notf message goy gargdag bolh
   }
   const onPressback =()=>{
     navigation.goBack()
@@ -36,14 +36,12 @@ const Login = () => {
        <View >
         <Text  >Нэвтрэх</Text>
       </View>
-      
       <TextInput
         style={styles.input}
         onChangeText={text => setEmail(text)}
         value={email}
         placeholder="Цахим шуудан"
       />
-      
       <TextInput
         style={styles.input}
         onChangeText={text => setPassword(text)}
@@ -61,7 +59,6 @@ const Login = () => {
         />
         <Text style={styles.txt}>Нууц үг харах</Text>
       </View> */}
-      
       <TouchableOpacity style={styles.loginBtn} onPress={() => handleLogin()} >
         <Text style={styles.loginText}>Нэвтрэх</Text>
       </TouchableOpacity>
