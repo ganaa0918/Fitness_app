@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image} from 'react
 import { useState } from 'react'
 import { CheckBox } from 'react-native-web'
 import jin4 from "../SignUpZurag/Biyiinjin4.png"
-import { useNavigation } from 'react-router-dom'
+import { useNavigation } from '@react-navigation/native'
 
 export default function BiyiinJin4({route}) {
   

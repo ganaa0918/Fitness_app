@@ -22,7 +22,10 @@ function Exercises() {
     navigation.goBack();
   }
   const onPress = () => {
-    console.log('hi toogoo')
+    navigation.navigate('Dasgal')
+  }
+  const onPressPush = () => {
+    navigation.navigate('Pushups')
   }
   return (
     <View style={styles.container}>
@@ -64,6 +67,7 @@ function Exercises() {
         </View>
         <View style={{ flex: 1, alignItems: 'flex-end' }}>
           <TouchableOpacity
+          onPress={onPressPush}
           style={styles.roundButton2}>
           <FontAwesome5 name='chevron-left' size={20} color='#7B7576' solid/>
           </TouchableOpacity>
@@ -183,6 +187,7 @@ function Exercises() {
         </View>
 
       </View>
+      <TouchableOpacity onPress={onPress}>
       <LinearGradient
         colors={['#6358E1', '#C58BF2']}
         style={styles.gradient}
@@ -190,8 +195,9 @@ function Exercises() {
         end={{ x: 0, y: 1 }}
         locations={[0,1]}
       >
-        <Text style={styles.text}>Hello, world!</Text>
+        <Text style={styles.text}>Эхлэх</Text>
       </LinearGradient>
+      </TouchableOpacity>
       <View style={styles.space} ></View>
 
 

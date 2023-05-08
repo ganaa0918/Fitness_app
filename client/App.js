@@ -21,6 +21,9 @@ import Login from './views/Login'
 import Restore from './views/Restore';
 import Info from './views/profileScreen/Info';
 import History from './views/profileScreen/History';
+import Dasgal from './views/workout_nav/Dasgal';
+import Dasgal1 from './views/workout_nav/Dasgal1';
+import Pushups from './views/workout_nav/Pushups';
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -74,6 +77,9 @@ function App() {
         <Stack.Screen name='MainContainer' component={MainContainer} options={{ headerShown: false }} />
         <Stack.Screen name='Info' component={Info} options={{ headerShown: false }} />
         <Stack.Screen name='History' component={History} options={{ headerShown: false }} />
+        <Stack.Screen name='Dasgal' component={Dasgal} options={{ headerShown: false }} />
+        <Stack.Screen name='Dasgal1' component={Dasgal1} options={{ headerShown: false }} />
+        <Stack.Screen name='Pushups' component={Pushups} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

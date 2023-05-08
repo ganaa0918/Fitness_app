@@ -5,7 +5,6 @@ import { CheckBox } from 'react-native-web'
 import { useNavigation } from '@react-navigation/native'
 
 export default function BiyiinJin3({route}) {
-  
   const [text, onChangeText] = React.useState('Useless Text');
   const [date, setDate] = useState('')
   const [jin, setJin] = useState('')
@@ -15,6 +14,9 @@ export default function BiyiinJin3({route}) {
   const navigation = useNavigation();
   const onPressBack = ()=> {
     navigation.goBack();
+  }
+  const onPressNext = ()=> {
+    navigation.navigate("BiyiinJin4")
   }
 
   return (
@@ -28,7 +30,7 @@ export default function BiyiinJin3({route}) {
         onPress={onPressBack}>
         <Text>{icon}</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.signBtn} onPress={() => navigation.navigate("BiyiinJin4")} >
+      <TouchableOpacity style={styles.signBtn} onPress={onPressNext} >
         <Text style={styles.signText}>Үргэлжлүүлэх</Text>
       </TouchableOpacity>
       

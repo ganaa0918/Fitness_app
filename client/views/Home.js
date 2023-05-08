@@ -24,7 +24,7 @@ export default function Home({ navigation }) {
             // Perform search action
           }}
         >
-          <FontAwesome5 name="search" size={24} color="black" />
+          <FontAwesome5 name="search" size={24} color="#777070" />
         </TouchableOpacity>
       ),
     });

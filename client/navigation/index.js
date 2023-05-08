@@ -53,7 +53,7 @@
           },
         })}
       >
-        <Tab.Screen name="Home" component={Home}/>
+        <Tab.Screen name="Home" component={Home} options={{headerTitleAlign:'left'}}/>
         <Tab.Screen name="Workout" component={Workout} options={{ headerTitle: 'Дасгал' }} />
         <Tab.Screen name="Activity" component={Activity} options={{ headerTitle: 'Миний Үйл ажилгаа' }}/>
         <Tab.Screen name="Profile" component={Profile} options={{headerTitle:'Миний хуудас', headerTitleAlign:'center'}} />
