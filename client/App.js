@@ -19,6 +19,8 @@ import BiyiinJin3 from './views/JinTootsoh/BiyiinJin3';
 import BiyiinJin4 from './views/JinTootsoh/BiyiinJin4';
 import Login from './views/Login'
 import Restore from './views/Restore';
+import Info from './views/profileScreen/Info';
+import History from './views/profileScreen/History';
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -70,6 +72,8 @@ function App() {
         <Stack.Screen name="PreTseej" component={PreTseej} options={{ headerShown: false }} />
         <Stack.Screen name="FreTseej" component={FreTseej} options={{ headerShown: false }} />
         <Stack.Screen name='MainContainer' component={MainContainer} options={{ headerShown: false }} />
+        <Stack.Screen name='Info' component={Info} options={{ headerShown: false }} />
+        <Stack.Screen name='History' component={History} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

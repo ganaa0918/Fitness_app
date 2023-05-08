@@ -19,9 +19,9 @@ export default function Workout() {
     tabBarShowLabel: true,
   });
   return (
-    
+
     <Tab.Navigator screenOptions={screenOptions} initialRouteName="Гэртээ" independent={true}>
-      <Tab.Screen name="Гэртээ" component={AtHome} options={{ headerShown: false, tabBarLabel:'New' }} />
+      <Tab.Screen name="Гэртээ" component={AtHome} options={{ headerShown: false, tabBarLabel:'Гэртээ' }} />
       <Tab.Screen name="Фитнеcc" component={Fitness} />
     </Tab.Navigator>
     )
