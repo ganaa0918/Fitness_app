@@ -1,11 +1,12 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import {View, Text, StyleSheet,Image, TouchableOpacity,ScrollView} from "react-native"
 import { FontAwesome5 } from '@expo/vector-icons';
 import Toggle from 'react-native-toggle-input'
 import img from '../assets/profile.png'
-
+import  { UserContext }  from "./UsersContext";
 export default function Profile({navigation}) {
   const [toggle, setToggle] = useState(false);
+  const { user } = useContext(UserContext)
   const toggleColor = toggle ? '#4C956C' : '#DB4437';
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
@@ -13,7 +14,7 @@ export default function Profile({navigation}) {
     <View style={styles.container}>
     <View style={styles.Alignbetween2}>
         <View style={{ flexDirection: 'column', marginLeft: 20, marginTop:10 }}>
-          <Text style={styles.text4}>Vander</Text>
+          <Text style={styles.text4}>{user}</Text>
           <Text style={styles.text3}>Lose a Fat Program</Text>
         </View>
         <View style={styles.back}>

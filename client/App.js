@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect , useMemo} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as SplashScreen from 'expo-splash-screen';
@@ -19,11 +19,13 @@ import BiyiinJin3 from './views/JinTootsoh/BiyiinJin3';
 import BiyiinJin4 from './views/JinTootsoh/BiyiinJin4';
 import Login from './views/Login'
 import Restore from './views/Restore';
+import  { UserContext }  from "./views/UsersContext";
 const Stack = createNativeStackNavigator();
 
 function App() {
   const [appIsReady, setAppIsReady] = useState(false);
-
+  const [user, setUser] = useState();
+  const ProviderValue = useMemo(() => ({user , setUser}), [user , setUser]);
   useEffect(() => {
     const prepareApp = async () => {
       try {
@@ -47,6 +49,7 @@ function App() {
   }
 
   return (
+    <UserContext.Provider value = {{user , setUser}}>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Ehlel1" component={Ehlel1} options={{ headerShown: false, animation:'fade_from_bottom' }} />
@@ -72,6 +75,7 @@ function App() {
         <Stack.Screen name='MainContainer' component={MainContainer} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
+    </UserContext.Provider>
   );
 }
 
