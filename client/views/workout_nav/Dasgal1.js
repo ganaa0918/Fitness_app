@@ -11,10 +11,10 @@ const onPressBack =()=>{
     navigation.goBack()
 }
 const onPressNext =()=>{
-    navigation.navigate('Dasgal1')
+    navigation.navigate('Rest')
 }
 const onPressSkip =()=>{
-    navigation.navigate('Dasgal1')
+    navigation.navigate('Rest')
 }
     return(
         <View style={styles.container}>
@@ -47,7 +47,7 @@ const onPressSkip =()=>{
     </TouchableOpacity>
     <Text style={styles.text3}>дараа</Text>
     <TouchableOpacity onPress={onPressSkip}>
-    <Text style={styles.text4}>Squats</Text>
+    <Text style={styles.text4}>амрах</Text>
     </TouchableOpacity>
         </View>
     )
