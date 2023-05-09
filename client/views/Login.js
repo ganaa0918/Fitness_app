@@ -1,28 +1,33 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, fontFamily} from 'react-native'
-import { useState } from 'react'
+import { useState , useContext} from 'react'
 import { CheckBox } from 'react-native-web'
 import { useNavigation } from '@react-navigation/native'
+import  { UserContext }  from "./UsersContext";
+
 const Login = () => {
   const navigation = useNavigation();
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isSelected, setSelection] = useState('')
+  const { user  , setUser} = useContext(UserContext)
   const icon = "<"
-
+  
   const handleLogin = () => {
     //Todo zasah
-    // fetch('http://10.0.2.2:3000/Login' ,
-    // {
-    //   method: 'post' ,
-    //   headers: { 'Content-Type': 'application/json'},
-    //   body: JSON.stringify({ email, password})
-    // }
-    // ).then(data => data.json()).then(data => {
+    fetch('http://10.0.2.2:3000/Login' ,
+    {
+      method: 'post' ,
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({ email, password})
+    }
+     ).then(data => data.json()).then(data => {
       navigation.navigate("MainContainer")
-      // })
+      setUser(data);
+       })
       // todo catch hiiged aldaanii message goy gargad bolh
       // todo newterch orood notf message goy gargdag bolh
+     
   }
   const onPressback =()=>{
     navigation.goBack()

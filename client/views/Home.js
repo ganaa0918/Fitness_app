@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect , useContext} from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from "react-native";
 import { ProgressBar } from "react-native-paper";
 import { LinearGradient } from 'expo-linear-gradient';
+
 import Swiper from "react-native-swiper";
 import img1 from '../assets/daily.png'
 import img2 from '../assets/daily1.png'
@@ -12,13 +13,24 @@ import img6 from '../assets/daily5.png'
 import { useNavigation } from "@react-navigation/native";
 
 import { FontAwesome5 } from '@expo/vector-icons';
+import  { UserContext }  from "./UsersContext";
+
 
 export default function Home() {
   const navigation = useNavigation();
 
   const [showSearch, setShowSearch] = useState(false);
   const [searchText, setSearchText] = useState("");
+  const { user } = useContext(UserContext)
+    //Todo zasah
+  
   useEffect(() => {
+    fetch('http://10.0.2.2:3000/home').then(data => data.json()).then(data => {
+
+    console.log(data);
+    }
+    ).catch(error => {console.log(error);
+    console.log("hi")});
     navigation.setOptions({
       headerRight: () => (
         <TouchableOpacity
@@ -32,6 +44,7 @@ export default function Home() {
       ),
     });
   }, []);
+
   const [progress, setProgress] = useState(0.5);
   const onPress = () => {
     navigation.navigate('Abs')
@@ -150,7 +163,7 @@ export default function Home() {
           <Image source={img6} />
           <View style={{ flexDirection: 'column', marginLeft:20 }}>
             <Text style={styles.text4}>Нуруу Эхлэгч</Text>
-            <Text style={styles.text3}>15 mins</Text>
+            <Text style={styles.text3}>{user}</Text>
           </View>
           <View style={{ flex: 1, alignItems: 'flex-end' }}>
             <TouchableOpacity
