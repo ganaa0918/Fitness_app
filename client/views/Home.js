@@ -10,10 +10,15 @@ import img3 from '../assets/daily2.png'
 import img4 from '../assets/daily3.png'
 import img5 from '../assets/daily4.png'
 import img6 from '../assets/daily5.png'
+import { useNavigation } from "@react-navigation/native";
 
 import { FontAwesome5 } from '@expo/vector-icons';
 import  { UserContext }  from "./UsersContext";
-export default function Home({ navigation }) {
+
+
+export default function Home() {
+  const navigation = useNavigation();
+
   const [showSearch, setShowSearch] = useState(false);
   const [searchText, setSearchText] = useState("");
   const { user } = useContext(UserContext)
@@ -34,13 +39,16 @@ export default function Home({ navigation }) {
             // Perform search action
           }}
         >
-          <FontAwesome5 name="search" size={24} color="black" />
+          <FontAwesome5 name="search" size={24} color="#777070" />
         </TouchableOpacity>
       ),
     });
   }, []);
 
   const [progress, setProgress] = useState(0.5);
+  const onPress = () => {
+    navigation.navigate('Abs')
+  }
 
   const images = [
     { id: "1", source: require("../assets/Rectangle20.png"), text: "Deadlift буюу үндсэн таталтыг зөв \n хийх 4 арга техник", screen:"Home" },
@@ -105,7 +113,8 @@ export default function Home({ navigation }) {
           </View>
           <View style={{ flex: 1, alignItems: 'flex-end' }}>
             <TouchableOpacity
-            style={styles.roundButton2}>
+            style={styles.roundButton2}
+            onPress={onPress}>
             <FontAwesome5 name='play' size={10} color='#FFFFFF' style={{paddingTop:8}} solid/>
             </TouchableOpacity>
           </View>
@@ -118,7 +127,8 @@ export default function Home({ navigation }) {
           </View>
           <View style={{ flex: 1, alignItems: 'flex-end' }}>
             <TouchableOpacity
-            style={styles.roundButton2}>
+            style={styles.roundButton2}
+            >
             <FontAwesome5 name='play' size={10} color='#FFFFFF' style={{paddingTop:8}} solid/>
             </TouchableOpacity>
           </View>

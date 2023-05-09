@@ -33,5 +33,28 @@ router.route('/Login').post(function (req, res) {
 
 });
 
+router.route('/home').get(function (req, res) {
+
+  async function run() {
+    const client = new MongoClient(uri1);
+    try {
+      console.log(req.body);
+      const database = client.db('Fitness_app');
+      const Cus = database.collection('Workout');
+      query = { caption: 1 };
+      const cursor = Cus.find(query);
+     
+      if ((await cursor.count()) === 0) {
+        console.log("No documents found!");
+      }
+      console.log(await cursor.toArray());
+      res.send(await cursor.toArray());
+    } finally {
+      await client.close();
+    }
+  }
+  run().catch(console.dir);
+
+});
 
 module.exports = router

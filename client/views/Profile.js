@@ -8,6 +8,12 @@ export default function Profile({navigation}) {
   const [toggle, setToggle] = useState(false);
   const { user } = useContext(UserContext)
   const toggleColor = toggle ? '#4C956C' : '#DB4437';
+  const onPressinfo = () =>{
+    navigation.navigate("Info")
+  }
+  const onPressHistory = () =>{
+    navigation.navigate("History")
+  }
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
 
@@ -30,7 +36,7 @@ export default function Profile({navigation}) {
             <FontAwesome5 name='user' size={20} color='#92A5FD' style={{paddingTop:5}} solid/>
               <Text style={styles.text5}>Хувийн мэдээлэл</Text>
             <View style={{ flex: 1, alignItems: 'flex-end' }}>
-              <TouchableOpacity style={styles.ooo}>
+              <TouchableOpacity style={styles.ooo} onPress={onPressinfo}>
               <FontAwesome5 name='chevron-right' size={20} color='gray' solid/>
               </TouchableOpacity>
             </View>
@@ -48,7 +54,7 @@ export default function Profile({navigation}) {
             <FontAwesome5 name='chart-pie' size={20} color='#92A5FD' style={{paddingTop:5}} solid/>
               <Text style={styles.text5}>Дасгалын түүх</Text>
             <View style={{ flex: 1, alignItems: 'flex-end' }}>
-              <TouchableOpacity style={styles.ooo}>
+              <TouchableOpacity style={styles.ooo} onPress={onPressHistory}>
               <FontAwesome5 name='chevron-right' size={20} color='gray' solid/>
               </TouchableOpacity>
             </View>

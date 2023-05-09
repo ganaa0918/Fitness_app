@@ -4,7 +4,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
 import {LinearGradient} from 'expo-linear-gradient'
 
-import Tseej from '../workout_nav/athome_pics/tseej.png'
+import Tseej from '../workout_nav/athome_pics/Blue-Bg.png'
 import Vector from '../workout_nav/athome_pics/Vector.png';
 import Dasgal2 from '../workout_nav/athome_pics/dasgal2.png';
 import Dasgal3 from '../workout_nav/athome_pics/dasgal3.png';
@@ -16,7 +16,7 @@ import Dasgal8 from '../workout_nav/athome_pics/dasgal8.png'
 import Dasgal9 from '../workout_nav/athome_pics/dasgal9.png'
 
 
-function Exercises() {
+function Abs() {
   const navigation = useNavigation();
   const Goback = () => {
     navigation.goBack();
@@ -36,7 +36,7 @@ function Exercises() {
         style={styles.roundButton1} onPress={Goback}>
         <FontAwesome5 name='chevron-left' size={20} color='#7B7576' style={styles.textBig} />
       </TouchableOpacity>
-      <Text style={styles.text2}>Цээж</Text>
+      <Text style={styles.text2}>Abs</Text>
       <View style={styles.Alignbetween}>
         <Text style={styles.text3}>
           Эхлэгч | 18mins | 320 Calories Burn
@@ -45,7 +45,7 @@ function Exercises() {
       </View>
       <View style={styles.Alignbetween3}>
         <Text style={styles.text4}>
-          Exercises
+          Abs
         </Text>
         <Text style={styles.text3}>
           2 Sets
@@ -326,4 +326,4 @@ const styles = StyleSheet.create({
     paddingTop:20
   }
 });
-export default Exercises
+export default Abs
