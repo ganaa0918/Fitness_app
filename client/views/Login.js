@@ -12,7 +12,7 @@ const Login = () => {
   const [isSelected, setSelection] = useState('')
   const { user  , setUser} = useContext(UserContext)
   const icon = "<"
-  
+
   const handleLogin = () => {
     //Todo zasah
     fetch('http://10.0.2.2:3000/Login' ,
@@ -27,7 +27,7 @@ const Login = () => {
        })
       // todo catch hiiged aldaanii message goy gargad bolh
       // todo newterch orood notf message goy gargdag bolh
-     
+
   }
   const onPressback =()=>{
     navigation.goBack()
