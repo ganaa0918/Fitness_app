@@ -2,7 +2,6 @@ import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image} from 'react-native'
 import { useState } from 'react'
 import { CheckBox } from 'react-native-web'
-import hi from '../SignUpZurag/hi.png';
 import { useNavigation } from '@react-navigation/native';
 
 export default function BiyiinJin({route}) {
@@ -11,6 +10,9 @@ export default function BiyiinJin({route}) {
   const [date, setDate] = useState('')
   const [jin, setJin] = useState('')
   const [undur, setUndur] = useState('')
+  const [tseej, setTseej] = useState('')
+  const [belhuus, setBelhuus] = useState('')
+  const [buselhii, setBuselhii] = useState('')
   const [huis, setHuis] = useState('')
   const icon = "<"
   const navigation = useNavigation();
@@ -19,7 +21,6 @@ export default function BiyiinJin({route}) {
   }
   return (
     <View style={styles.container}>
-      <Image source={hi} style={{width:300,height:250}} />
       <TouchableOpacity
         style={styles.roundButton1}
         onPress={onPressBack}>
@@ -52,6 +53,24 @@ export default function BiyiinJin({route}) {
         onChangeText={text => setUndur(text)}
         value={undur}
         placeholder="Өндөр"
+      />
+       <TextInput
+        style={styles.input}
+        onChangeText={text => setTseej(text)}
+        value={undur}
+        placeholder="Цээжний тойрог"
+      />
+       <TextInput
+        style={styles.input}
+        onChangeText={text => setBelhuus(text)}
+        value={undur}
+        placeholder="Бэлхүүсний тойрог"
+      />
+       <TextInput
+        style={styles.input}
+        onChangeText={text => setBuselhii(text)}
+        value={undur}
+        placeholder="Бүсэлхийн тойрог"
       />
       <TouchableOpacity style={styles.signBtn} onPress={() => navigation.navigate("BiyiinJin2")} >
         <Text style={styles.signText}>Дараах</Text>
