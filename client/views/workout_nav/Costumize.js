@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {View, Text, StyleSheet,TouchableOpacity, Image,ScrollView, TextInput} from 'react-native'
+import {View, Text, StyleSheet,TouchableOpacity, Image,ScrollView, TextInput, FlatList} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import {LinearGradient} from 'expo-linear-gradient'
@@ -12,79 +12,97 @@ import Vector from '../workout_nav/athome_pics/Vector.png';
 
 import Costumizeimg from './athome_pics/costumize.png'
 function Costumize() {
+  const [searchQuery, setSearchQuery] = useState('');
     const navigation = useNavigation();
     const Goback = () => {
       navigation.goBack();
     }
-
+    const data = [
+      {
+        id: 1,
+        imageSource: require('../workout_nav/athome_pics/Vector.png'),
+        text1: 'Push Ups',
+        text2: '12x',
+        iconName: 'circle'
+      },
+      {
+        id: 2,
+        imageSource: require('../workout_nav/athome_pics/dasgal2.png'),
+        text1: 'Skipping',
+        text2: '15x',
+        iconName: 'circle'
+      },
+      {
+        id: 3,
+        imageSource: require('../workout_nav/athome_pics/dasgal3.png'),
+        text1: 'Squats',
+        text2: '20x',
+        iconName: 'circle'
+      },
+      {
+        id: 4,
+        imageSource: require('../workout_nav/athome_pics/dasgal4.png'),
+        text1: 'Arm Raises',
+        text2: '10x',
+        iconName: 'circle'
+      },
+      {
+        id: 5,
+        imageSource: require('../workout_nav/athome_pics/dasgal5.png'),
+        text1: 'REst',
+        text2: '5 min',
+        iconName: 'circle'
+      },
+      {
+        id: 6,
+        imageSource: require('../workout_nav/athome_pics/dasgal3.png'),
+        text1: 'Squats',
+        text2: '20x',
+        iconName: 'circle'
+      },
+    ];
+    const filteredData = data.filter((item) =>
+  item.text1.toLowerCase().includes(searchQuery.toLowerCase())
+);
+const handleSearch = (text) => {
+  setSearchQuery(text);
+};
     const backgroundColor = '#000';
   return (
     <View style={[styles.container,{backgroundColor}]}>
-        <ScrollView style={styles.contentContainer}>
-        <TouchableOpacity
-        style={styles.roundButton1} onPress={Goback}>
-        <FontAwesome5 name='chevron-left' size={20} color='#7B7576' style={styles.textBig} />
-      </TouchableOpacity>
+
             <View style={styles.header}>
         <Image source={Costumizeimg} style={styles.image} />
         <Text style={styles.bigText}>Гэрийн{"\n"}дасгал бүтээх</Text>
         <Text style={styles.smallText}>Өөрийгөө бүтээ</Text>
         </View>
+        <TouchableOpacity
+        style={styles.roundButton1} onPress={Goback}>
+        <FontAwesome5 name='chevron-left' size={20} color='#7B7576' style={styles.textBig} />
+      </TouchableOpacity>
 
-
-      <TextInput style={{backgroundColor:'white', marginHorizontal:20, borderRadius:20, height:25}}></TextInput>
-      <View style={styles.Alignbetween2}>
-        <Image source={Vector} />
-        <View style={{ flexDirection: 'column', marginLeft:20 }}>
-          <Text style={styles.text4}>Push-Ups</Text>
-          <Text style={styles.text3}>15x</Text>
-        </View>
-        <View style={{ flex: 1, alignItems: 'flex-end' }}>
-          <TouchableOpacity
-          style={styles.roundButton2}>
-          <FontAwesome5 name='circle' size={20} color='#7B7576'/>
-          </TouchableOpacity>
-        </View>
+      <TextInput style={{backgroundColor:'white', marginHorizontal:80, borderRadius:20, height:25, width:"80%"}}
+      placeholder='Search...'
+      onChangeText={handleSearch}
+      value={searchQuery}/>
+      <FlatList
+  data={filteredData}
+  renderItem={({ item }) => (
+    <View style={styles.Alignbetween2}>
+      <Image source={item.imageSource} />
+      <View style={{ flexDirection: 'column', marginLeft:20 }}>
+        <Text style={styles.text4}>{item.text1}</Text>
+        <Text style={styles.text3}>{item.text2}</Text>
       </View>
-      <View style={styles.Alignbetween2}>
-        <Image source={Dasgal2} />
-        <View style={{ flexDirection: 'column', marginLeft:20 }}>
-          <Text style={styles.text4}>Skipping</Text>
-          <Text style={styles.text3}>15x</Text>
-        </View>
-        <View style={{ flex: 1, alignItems: 'flex-end' }}>
-          <TouchableOpacity
-          style={styles.roundButton2}>
-          <FontAwesome5 name='circle' size={20} color='#7B7576'/>
-          </TouchableOpacity>
-        </View>
+      <View style={{ flex: 1, alignItems: 'flex-end',marginLeft:120 }}>
+        <TouchableOpacity style={styles.roundButton2}>
+          <FontAwesome5 name={item.iconName} size={20} color='#7B7576' />
+        </TouchableOpacity>
       </View>
-      <View style={styles.Alignbetween2}>
-        <Image source={Dasgal3} />
-        <View style={{ flexDirection: 'column', marginLeft:20 }}>
-          <Text style={styles.text4}>Skipping</Text>
-          <Text style={styles.text3}>15x</Text>
-        </View>
-        <View style={{ flex: 1, alignItems: 'flex-end' }}>
-          <TouchableOpacity
-          style={styles.roundButton2}>
-          <FontAwesome5 name='circle' size={20} color='#7B7576'/>
-          </TouchableOpacity>
-        </View>
-      </View>
-      <View style={styles.Alignbetween2}>
-        <Image source={Dasgal4} />
-        <View style={{ flexDirection: 'column', marginLeft:20 }}>
-          <Text style={styles.text4}>Skipping</Text>
-          <Text style={styles.text3}>15x</Text>
-        </View>
-        <View style={{ flex: 1, alignItems: 'flex-end' }}>
-          <TouchableOpacity
-          style={styles.roundButton2}>
-          <FontAwesome5 name='circle' size={20} color='#7B7576'/>
-          </TouchableOpacity>
-        </View>
-      </View>
+    </View>
+  )}
+  keyExtractor={(item) => item.id.toString()}
+/>
       <LinearGradient
         colors={['#5625E3', '#9959D9']}
         style={styles.gradient}
@@ -94,7 +112,6 @@ function Costumize() {
       >
         <Text style={styles.text}>Эхлэх</Text>
       </LinearGradient>
-      </ScrollView>
     </View>
   )
 }
@@ -121,7 +138,7 @@ const styles = StyleSheet.create({
     fontSize:20,
   },
   image:{
-    top:120,
+    top:100,
     height:200
   },
   text1:{
@@ -134,7 +151,8 @@ const styles = StyleSheet.create({
   header:{
     position:'relative',
     width:'100%',
-    height:400
+    height:350,
+    left:10
   },
   bigText: {
     fontSize: 24,
@@ -182,8 +200,9 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: 'center',
     position:'relative',
-    left: 50,
+    left: 0,
     borderRadius: 20,
+    marginBottom:30
   },
   text: {
     fontSize: 24,
