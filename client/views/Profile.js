@@ -110,7 +110,7 @@ export default function Profile({navigation}) {
 const styles = StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
-    paddingBottom: 100,
+    paddingBottom: 0,
   },
   container: {
     flex: 1,
