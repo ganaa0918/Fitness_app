@@ -17,6 +17,9 @@ export default function Profile({navigation}) {
   const onPressPro = () =>{
     navigation.navigate("Order")
   }
+  const handleLogout = () =>{
+    navigation.navigate("Log")
+  }
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
 
@@ -94,10 +97,10 @@ export default function Profile({navigation}) {
             </View>
           </View>
           <View style={styles.Alignbetween4}>
-            <FontAwesome5 name='user-secret' size={20} color='#92A5FD' style={{paddingTop:0}} solid/>
-              <Text style={styles.text5} >Нууцлал</Text>
+            <FontAwesome5 name='door-open' size={20} color='#92A5FD' style={{paddingTop:0}} solid/>
+              <Text style={styles.text5} >Гарах</Text>
             <View style={{ flex: 1, alignItems: 'flex-end' }}>
-            <TouchableOpacity style={styles.ooo}>
+            <TouchableOpacity style={styles.ooo} onPress={handleLogout}>
               <FontAwesome5 name='chevron-right' size={20} color='gray' solid/>
               </TouchableOpacity>
             </View>
