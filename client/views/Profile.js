@@ -14,6 +14,9 @@ export default function Profile({navigation}) {
   const onPressHistory = () =>{
     navigation.navigate("History")
   }
+  const onPressPro = () =>{
+    navigation.navigate("Order")
+  }
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
 
@@ -27,7 +30,7 @@ export default function Profile({navigation}) {
           <Image source={img} style={styles.image} />
         </View>
       </View>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={onPressPro}>
         <Text style={styles.textvip}>Pro хэрэглэгч болох</Text>
       </TouchableOpacity>
       <Text style={styles.account}>Аккоунт</Text>

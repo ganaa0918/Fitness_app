@@ -27,6 +27,9 @@ import Dasgal1 from './views/workout_nav/Dasgal1';
 import Pushups from './views/workout_nav/Pushups';
 import Rest from './views/workout_nav/Rest';
 import Abs from './views/workout_nav/Abs';
+import Order from './views/Order';
+import Payment from './views/Payment';
+import Done from './views/Done';
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -62,6 +65,7 @@ function App() {
         <Stack.Screen name="Ehlel1" component={Ehlel1} options={{ headerShown: false, animation:'fade_from_bottom' }} />
         <Stack.Screen name="Ehlel2" component={Ehlel2} options={{ headerShown: false, animation:'fade' }} />
         <Stack.Screen name="Log" component={Log} options={{ headerShown: false, animation:'fade' }} />
+        <Stack.Screen name="Order" component={Order} options={{ headerShown: false, animation:'fade' }} />
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false, animation:'fade' }} />
         <Stack.Screen name='Restore' component={Restore} options={{ headerShown: false }} />
         <Stack.Screen name="Exercises" component={Exercises} options={{ headerShown: false }} />
@@ -71,12 +75,7 @@ function App() {
         <Stack.Screen name="BiyiinJin2" component={BiyiinJin2} options={{headerShown: false}} />
         <Stack.Screen name="BiyiinJin3" component={BiyiinJin3} options={{ headerShown: false }} />
         <Stack.Screen name="BiyiinJin4" component={BiyiinJin4} options={{ headerShown: false }} />
-        <Stack.Screen
-          name="UserScreen"
-          component={UserScreen}
-          options={{ headerShown: false }}
-          initialParams={{ isPremiumUser }}
-        />
+        <Stack.Screen name="UserScreen"component={UserScreen} options={{ headerShown: false }} initialParams={{ isPremiumUser }}/>
         <Stack.Screen name="PreTseej" component={PreTseej} options={{ headerShown: false }} />
         <Stack.Screen name="FreTseej" component={FreTseej} options={{ headerShown: false }} />
         <Stack.Screen name='MainContainer' component={MainContainer} options={{ headerShown: false }} />
@@ -87,6 +86,8 @@ function App() {
         <Stack.Screen name='Pushups' component={Pushups} options={{ headerShown: false }} />
         <Stack.Screen name='Rest' component={Rest} options={{ headerShown: false }} />
         <Stack.Screen name='Abs' component={Abs} options={{ headerShown: false }} />
+        <Stack.Screen name='Payment' component={Payment} options={{ headerShown: false }} />
+        <Stack.Screen name='Done' component={Done} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
     </UserContext.Provider>

@@ -7,10 +7,10 @@ import Nuruu2 from '../workout_nav/athome_pics/fitness_nuruu.png'
 
 
 const History = () => {
-    const navigation = useNavigation();
-const Goback = () => {
-    navigation.goBack();
-  }
+  const navigation = useNavigation();
+  const Goback = () => {
+      navigation.goBack();
+    }
   const PressTseej = ()=>{
     navigation.navigate('UserScreen')
   }

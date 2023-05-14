@@ -57,6 +57,107 @@ export default function Home() {
     // Add more images here...
   ];
 
+//   const data = [
+//   {
+//     id: 1,
+//     image: img2,
+//     title: 'Abs Эхлэгч',
+//     duration: '18 mins',
+//   },
+//   {
+//     id: 2,
+//     image: img3,
+//     title: 'Цээж Эхлэгч',
+//     duration: '12 mins',
+//   },
+//   {
+//     id: 3,
+//     image: img4,
+//     title: 'Мөр Эхлэгч',
+//     duration: '15 mins',
+//   },
+//   {
+//     id: 4,
+//     image: img5,
+//     title: 'Хөл Эхлэгч',
+//     duration: '15 mins',
+//   },
+//   {
+//     id: 5,
+//     image: img6,
+//     title: 'Нуруу Эхлэгч',
+//     duration: user,
+//   },
+// ];
+const maleData = [
+  {
+    id: 1,
+    image: img2,
+    title: 'Abs Эхлэгч',
+    duration: '18 mins',
+    screen: 'Abs'
+  },
+  {
+    id: 2,
+    image: img3,
+    title: 'Цээж Эхлэгч',
+    duration: '12 mins',
+  },
+  {
+    id: 3,
+    image: img4,
+    title: 'Мөр Эхлэгч',
+    duration: '15 mins',
+  },
+  {
+    id: 4,
+    image: img5,
+    title: 'Хөл Эхлэгч',
+    duration: '15 mins',
+  },
+  {
+    id: 5,
+    image: img6,
+    title: 'Нуруу Эхлэгч',
+    duration: '20 mins',
+  },
+];
+
+const femaleData = [
+  {
+    id: 1,
+    image: img2,
+    title: 'Abs Эхлэгч',
+    duration: '15 mins',
+  },
+  {
+    id: 2,
+    image: img3,
+    title: 'Цээж Эхлэгч',
+    duration: '10 mins',
+  },
+  {
+    id: 3,
+    image: img4,
+    title: 'Мөр Эхлэгч',
+    duration: '12 mins',
+  },
+  {
+    id: 4,
+    image: img5,
+    title: 'Хөл Эхлэгч',
+    duration: '12 mins',
+  },
+  {
+    id: 5,
+    image: img6,
+    title: 'Нуруу Эхлэгч',
+    duration: '15 mins',
+  },
+];
+const gender = 'male';
+const userData = gender === 'male' ? maleData : femaleData;
+
   const renderCarouselItem = (item) => (
     <TouchableOpacity
       style={styles.carouselItem}
@@ -104,7 +205,7 @@ export default function Home() {
       <View style={styles.dasgaluudContainer}>
       <Text style={styles.dasgaluudText}>Энгийн дасгалууд</Text>
       <Image source={img1} />
-      <View style={styles.dailycontainer}>
+      {/* <View style={styles.dailycontainer}>
         <View style={styles.Alignbetween2}>
           <Image source={img2} />
           <View style={{ flexDirection: 'column', marginLeft:20 }}>
@@ -173,6 +274,32 @@ export default function Home() {
           </View>
         </View>
       </View>
+    </View> */}
+     <View style={styles.dailycontainer}>
+      {userData.map((item) => (
+        <View key={item.id} style={styles.Alignbetween2}>
+          <Image source={item.image} />
+          <View style={{ flexDirection: 'column', marginLeft: 20 }}>
+            <Text style={styles.text4}>{item.title}</Text>
+            <Text style={styles.text3}>{item.duration}</Text>
+          </View>
+          <View style={{ flex: 1, alignItems: 'flex-end' }}>
+            <TouchableOpacity
+              style={styles.roundButton2}
+              onPress={() => navigation.navigate(item.screen)}
+            >
+              <FontAwesome5
+                name="play"
+                size={10}
+                color="#FFFFFF"
+                style={{ paddingTop: 8 }}
+                solid
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
+      ))}
+    </View>
     </View>
     </View>
     </ScrollView>
