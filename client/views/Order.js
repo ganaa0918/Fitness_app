@@ -79,9 +79,9 @@ const Order = ()=> {
             </View>
             </TouchableOpacity>
             {isPressed ?
-            <View style={{position:'absolute', width:40, height:40, borderRadius:'100%', borderWidth:10, left:275,top:50,borderColor:'white'}} />
+            <View style={{position:'absolute', width:40, height:40, borderRadius:20, borderWidth:10, left:275,top:50,borderColor:'white'}} />
             :
-            <View style={{position:'absolute', width:40, height:40, borderRadius:'100%', borderWidth:1, left:275,top:50,borderColor:'gray'}} />
+            <View style={{position:'absolute', width:40, height:40, borderRadius:20, borderWidth:1, left:275,top:50,borderColor:'gray'}} />
             }
            </View>
 
@@ -94,9 +94,9 @@ const Order = ()=> {
                 <Text style={{color: stext2}}>260,000₮ / сар</Text>
             </View>
             {isPressed2 ?
-            <View style={{position:'absolute', width:40, height:40, borderRadius:'100%', borderWidth:10, left:275,top:70,borderColor:'white'}} />
+            <View style={{position:'absolute', width:40, height:40, borderRadius: 20, borderWidth:10, left:275,top:70,borderColor:'white'}} />
             :
-            <View style={{position:'absolute', width:40, height:40, borderRadius:'100%', borderWidth:1, left:275,top:70,borderColor:'gray'}} />
+            <View style={{position:'absolute', width:40, height:40, borderRadius: 20, borderWidth:1, left:275,top:70,borderColor:'gray'}} />
 
             }
             </View>

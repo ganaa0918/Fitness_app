@@ -15,7 +15,7 @@ const Login = () => {
 
   const handleLogin = () => {
     //Todo zasah
-    fetch('http://10.0.2.2:3000/Login' ,
+    fetch('http://127.0.0.1:3000/Login' ,
     {
       method: 'post' ,
       headers: { 'Content-Type': 'application/json'},

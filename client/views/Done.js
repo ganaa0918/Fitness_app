@@ -11,7 +11,7 @@ const Done = () => {
     },[])
     return(
         <View style={styles.container}>
-            <Image source={require('./SignUpZurag/success.gif')} style={{width:"100%", height:200, top:300 }}/>
+            <Image source={require('./SignUpZurag/success.gif')} style={{width:"100%", height:200, top:250 }}/>
 
         </View>
     )
