@@ -56,19 +56,19 @@ export default function BiyiinJin({route}) {
        <TextInput
         style={styles.input}
         onChangeText={text => setTseej(text)}
-        value={undur}
+        value={tseej}
         placeholder="Цээжний тойрог"
       />
        <TextInput
         style={styles.input}
         onChangeText={text => setBelhuus(text)}
-        value={undur}
+        value={belhuus}
         placeholder="Бэлхүүсний тойрог"
       />
        <TextInput
         style={styles.input}
         onChangeText={text => setBuselhii(text)}
-        value={undur}
+        value={buselhii}
         placeholder="Бүсэлхийн тойрог"
       />
       <TouchableOpacity style={styles.signBtn} onPress={() => navigation.navigate("BiyiinJin2")} >
