@@ -1,8 +1,6 @@
 import React, {useEffect} from "react";
 import { View,Image, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import FastImage from 'react-native-fast-image';
-import Success from './SignUpZurag/success.gif'
 const Done = () => {
     const navigation = useNavigation();
     useEffect(()=>{

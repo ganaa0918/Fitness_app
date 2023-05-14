@@ -32,10 +32,10 @@ export default function BiyiinJin({route}) {
    }
     ).then(data => data.json()).then(data => {
       alert('amjiltai burtgegdelee');
- 
       })
-  
-   
+  }
+  const PressNext = () =>{
+    navigation.navigate('BiyiinJin2')
   }
   const onPressBack = ()=> {
     navigation.goBack();
@@ -93,7 +93,8 @@ export default function BiyiinJin({route}) {
         value={undur}
         placeholder="Бүсэлхийн тойрог"
       />
-      <TouchableOpacity style={styles.signBtn} onPress={() => handleLogin()} >
+      {/* <TouchableOpacity style={styles.signBtn} onPress={() => handleLogin()} > */}
+      <TouchableOpacity style={styles.signBtn} onPress={PressNext} >
         <Text style={styles.signText}>Дараах</Text>
       </TouchableOpacity>
     </View>
