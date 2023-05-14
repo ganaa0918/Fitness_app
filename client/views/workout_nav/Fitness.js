@@ -5,9 +5,13 @@ import Tseej2 from './athome_pics/fitness_gym.png'
 import Nuruu2 from './athome_pics/fitness_nuruu.png'
 import Mor from './athome_pics/fitness_mor.png'
 import Hol2 from './athome_pics/fitness_hol.png'
+
 function Fitness({navigation, }) {
   const PressTseej = ()=>{
     navigation.navigate('UserScreen')
+  }
+  const PressPro = ()=>{
+    navigation.navigate('Order')
   }
   return (
     <View style={styles.container}>
@@ -16,7 +20,7 @@ function Fitness({navigation, }) {
         <View style={styles.costumContainer}>
         <Image source={Premuim} style={{alignSelf: 'center'}} />
           <Text style={styles.button3}>Pro хэрэглэгч болох</Text>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={PressPro}>
             <Text style={styles.buttonText}>Эхлэх</Text>
           </TouchableOpacity>
         </View>
