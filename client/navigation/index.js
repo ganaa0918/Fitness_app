@@ -1,7 +1,5 @@
   import * as React from "react";
-
   import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-  import { NavigationContainer } from "@react-navigation/native";
   import { FontAwesome5 } from '@expo/vector-icons';
   import { createNativeStackNavigator } from "@react-navigation/native-stack";
   // Screens
@@ -9,7 +7,6 @@
   import Workout from "./Workout_navs";
   import Activity from "./Activity_navs";
   import Profile from "../views/Profile";
-  import Exercises from "../views/workout_nav/Exercises";
   const Tab = createBottomTabNavigator();
   const Stack = createNativeStackNavigator()
   export default function MainContainer() {

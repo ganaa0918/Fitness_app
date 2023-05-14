@@ -32,7 +32,6 @@ const onPressSkip =()=>{
       tintColor="#42CDD6"
       backgroundColor="#D9D9D9"
       duration={15000} // 15 seconds
-      onAnimationComplete={() => console.log('onAnimationComplete')}
     >
     { (fill) => (
     <View>

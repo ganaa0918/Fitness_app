@@ -7,7 +7,6 @@ const Restore = () => {
   const navigation = useNavigation();
 
   const [email, setEmail] = useState('')
-  // const navigate = useNavigate()
   const icon = "<"
   const PressBack =()=>{
     navigation.goBack();
@@ -26,7 +25,6 @@ const Restore = () => {
       </TouchableOpacity>
         <Text style={styles.bigTxt}>Нууц үг мартсан?</Text>
         <Text style={styles.smalltxt}>Та имейл хаягаа үлдээнэ үү. Бид нууц үгийг тань илгээх болно</Text>
-      
       <TextInput
         style={styles.input}
         onChangeText={text => setEmail(text)}

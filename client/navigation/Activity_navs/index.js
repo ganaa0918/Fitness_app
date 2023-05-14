@@ -19,7 +19,7 @@ export default function Workout() {
     },
     tabBarShowLabel: true,
   });
-  return (  
+  return (
     <Tab.Navigator screenOptions={screenOptions} initialRouteName="Дата" independent={true}>
       <Tab.Screen name="Өдрөөр" component={Days} options={{ headerShown: false, tabBarLabel:'Өдрөөр' }} />
       <Tab.Screen name="Хуанли" component={Schedule} />

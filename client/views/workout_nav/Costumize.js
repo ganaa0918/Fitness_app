@@ -3,11 +3,6 @@ import {View, Text, StyleSheet,TouchableOpacity, Image,ScrollView, TextInput, Fl
 import { useNavigation } from '@react-navigation/native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import {LinearGradient} from 'expo-linear-gradient'
-import Dasgal2 from '../workout_nav/athome_pics/dasgal2.png';
-import Dasgal3 from '../workout_nav/athome_pics/dasgal3.png';
-import Dasgal4 from '../workout_nav/athome_pics/dasgal4.png';
-import Dasgal5 from '../workout_nav/athome_pics/dasgal5.png';
-import Vector from '../workout_nav/athome_pics/Vector.png';
 
 
 import Costumizeimg from './athome_pics/costumize.png'

@@ -5,7 +5,6 @@ import { useNavigation } from "@react-navigation/native";
 
 const Order = ()=> {
     const navigation = useNavigation();
-    const [boxColor, setBoxColor] = useState('#FFFFFF');
     const [stext, setText] = useState('black')
     const [stext2, set2Text] = useState('black')
     const [box1Color, setBox1Color] = useState('#FFFFFF');

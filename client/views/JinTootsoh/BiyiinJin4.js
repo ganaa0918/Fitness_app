@@ -6,7 +6,6 @@ import jin4 from "../SignUpZurag/Biyiinjin4.png"
 import { useNavigation } from '@react-navigation/native'
 
 export default function BiyiinJin4({route}) {
-  
   const [text, onChangeText] = React.useState('Useless Text');
   const [date, setDate] = useState('')
   const [jin, setJin] = useState('')
@@ -25,9 +24,7 @@ export default function BiyiinJin4({route}) {
         <Text style={styles.GoyGarchig} >Сайн уу, ...</Text>
         <Text style={styles.txt} >Бүх мэдээлэл амжилттай </Text>
         <Text style={styles.txt1} >бүртгэгдлээ.</Text>
-     
       </View>
-      
       <TouchableOpacity
         style={styles.roundButton1} onPress={onPressBack}>
         <Text>{icon}</Text>
@@ -35,7 +32,6 @@ export default function BiyiinJin4({route}) {
       <TouchableOpacity style={styles.signBtn} onPress={() => navigation.navigate("MainContainer")} >
         <Text style={styles.signText}>Үргэлжлүүлэх</Text>
       </TouchableOpacity>
-      
     </View>
   );
 }
@@ -101,7 +97,6 @@ const styles = StyleSheet.create({
     marginLeft:60,
     fontSize:18
   },
-  
   signBtn: {
     width: "70%",
     borderRadius: 15,
@@ -127,6 +122,5 @@ const styles = StyleSheet.create({
     paddingTop:10,
     resizeMode:'contain'
   }
- 
 });
 

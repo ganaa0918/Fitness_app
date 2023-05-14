@@ -10,33 +10,26 @@ import img3 from '../assets/daily2.png'
 import img4 from '../assets/daily3.png'
 import img5 from '../assets/daily4.png'
 import img6 from '../assets/daily5.png'
-import { useNavigation } from "@react-navigation/native";
 
+import { useNavigation } from "@react-navigation/native";
 import { FontAwesome5 } from '@expo/vector-icons';
 import  { UserContext }  from "./UsersContext";
 
 
 export default function Home() {
   const navigation = useNavigation();
-
-  const [showSearch, setShowSearch] = useState(false);
-  const [searchText, setSearchText] = useState("");
   const { user } = useContext(UserContext)
-    //Todo zasah
-  
   useEffect(() => {
     fetch('http://10.0.2.2:3000/home').then(data => data.json()).then(data => {
 
     console.log(data);
     }
-    ).catch(error => {console.log(error);
-    console.log("hi")});
+    ).catch(error => {console.log(error);});
     navigation.setOptions({
       headerRight: () => (
         <TouchableOpacity
           style={{ marginRight: 15 }}
           onPress={() => {
-            // Perform search action
           }}
         >
           <FontAwesome5 name="search" size={24} color="#777070" />
@@ -46,49 +39,13 @@ export default function Home() {
   }, []);
 
   const [progress, setProgress] = useState(0.5);
-  const onPress = () => {
-    navigation.navigate('Abs')
-  }
 
   const images = [
     { id: "1", source: require("../assets/Rectangle20.png"), text: "Deadlift буюу үндсэн таталтыг зөв \n хийх 4 арга техник", screen:"Home" },
     { id: "2", source: require("../assets/Rectangle21.png"), text: "Хүнсний ногоог хэрэглэх хамгийн \n эрүүл арга юу вэ?", screen:"Home" },
     { id: "3", source: require("../assets/Rectangle22.png"), text: "Сайн нүүрс ус гэж юу вэ", screen:"Home" },
-    // Add more images here...
   ];
 
-//   const data = [
-//   {
-//     id: 1,
-//     image: img2,
-//     title: 'Abs Эхлэгч',
-//     duration: '18 mins',
-//   },
-//   {
-//     id: 2,
-//     image: img3,
-//     title: 'Цээж Эхлэгч',
-//     duration: '12 mins',
-//   },
-//   {
-//     id: 3,
-//     image: img4,
-//     title: 'Мөр Эхлэгч',
-//     duration: '15 mins',
-//   },
-//   {
-//     id: 4,
-//     image: img5,
-//     title: 'Хөл Эхлэгч',
-//     duration: '15 mins',
-//   },
-//   {
-//     id: 5,
-//     image: img6,
-//     title: 'Нуруу Эхлэгч',
-//     duration: user,
-//   },
-// ];
 const maleData = [
   {
     id: 1,
@@ -163,7 +120,6 @@ const userData = gender === 'male' ? maleData : femaleData;
       style={styles.carouselItem}
       onPress={() => navigation.navigate(item.screen)}
     >
-
       <Image source={item.source} style={styles.image} />
       <Text style={styles.textnews}>{item.text}</Text>
     </TouchableOpacity>
@@ -205,76 +161,6 @@ const userData = gender === 'male' ? maleData : femaleData;
       <View style={styles.dasgaluudContainer}>
       <Text style={styles.dasgaluudText}>Энгийн дасгалууд</Text>
       <Image source={img1} />
-      {/* <View style={styles.dailycontainer}>
-        <View style={styles.Alignbetween2}>
-          <Image source={img2} />
-          <View style={{ flexDirection: 'column', marginLeft:20 }}>
-            <Text style={styles.text4}>Abs Эхлэгч</Text>
-            <Text style={styles.text3}>18 mins</Text>
-          </View>
-          <View style={{ flex: 1, alignItems: 'flex-end' }}>
-            <TouchableOpacity
-            style={styles.roundButton2}
-            onPress={onPress}>
-            <FontAwesome5 name='play' size={10} color='#FFFFFF' style={{paddingTop:8}} solid/>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <View style={styles.Alignbetween2}>
-          <Image source={img3} />
-          <View style={{ flexDirection: 'column', marginLeft:20 }}>
-            <Text style={styles.text4}>Цээж Эхлэгч</Text>
-            <Text style={styles.text3}>12 mins</Text>
-          </View>
-          <View style={{ flex: 1, alignItems: 'flex-end' }}>
-            <TouchableOpacity
-            style={styles.roundButton2}
-            >
-            <FontAwesome5 name='play' size={10} color='#FFFFFF' style={{paddingTop:8}} solid/>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <View style={styles.Alignbetween2}>
-          <Image source={img4} />
-          <View style={{ flexDirection: 'column', marginLeft:20 }}>
-            <Text style={styles.text4}>Мөр Эхлэгч</Text>
-            <Text style={styles.text3}>15 mins</Text>
-          </View>
-          <View style={{ flex: 1, alignItems: 'flex-end' }}>
-            <TouchableOpacity
-            style={styles.roundButton2}>
-            <FontAwesome5 name='play' size={10} color='#FFFFFF' style={{paddingTop:8}} solid/>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <View style={styles.Alignbetween2}>
-          <Image source={img5} />
-          <View style={{ flexDirection: 'column', marginLeft:20 }}>
-            <Text style={styles.text4}>Хөл Эхлэгч </Text>
-            <Text style={styles.text3}>15 mins</Text>
-          </View>
-          <View style={{ flex: 1, alignItems: 'flex-end' }}>
-            <TouchableOpacity
-            style={styles.roundButton2}>
-            <FontAwesome5 name='play' size={10} color='#FFFFFF' style={{paddingTop:8}} solid/>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <View style={styles.Alignbetween2}>
-          <Image source={img6} />
-          <View style={{ flexDirection: 'column', marginLeft:20 }}>
-            <Text style={styles.text4}>Нуруу Эхлэгч</Text>
-            <Text style={styles.text3}>{user}</Text>
-          </View>
-          <View style={{ flex: 1, alignItems: 'flex-end' }}>
-            <TouchableOpacity
-            style={styles.roundButton2}>
-            <FontAwesome5 name='play' size={10} color='#FFFFFF' style={{paddingTop:8}} solid/>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
-    </View> */}
      <View style={styles.dailycontainer}>
       {userData.map((item) => (
         <View key={item.id} style={styles.Alignbetween2}>

@@ -11,6 +11,9 @@ const Rest = () =>{
 const onPressBack =()=>{
     navigation.goBack()
 }
+const onPressEnd =()=>{
+  navigation.navigate('MainContainer')
+}
     useEffect(() => {
         const timer = setInterval(() => {
           if (count > 1) {
@@ -40,7 +43,7 @@ const onPressBack =()=>{
             <TouchableOpacity onPress={handleAddTime} style={styles.button}>
         <Text style={styles.text2}>+20s</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button2}>
+      <TouchableOpacity style={styles.button2} onPress={onPressEnd}>
         <Text style={{color:'white',paddingTop:10}}>Алгасах</Text>
       </TouchableOpacity>
             </View>
