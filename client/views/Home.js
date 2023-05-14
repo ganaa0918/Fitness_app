@@ -137,7 +137,7 @@ const userData = gender === 'male' ? maleData : femaleData;
       >
         <View style={styles.text1}>
           <Text style={{ color: 'white' }}>Долоо хонгийн идэвх</Text>
-          <Text style={{ color: 'white' }}>{`${progress * 4}/4`}</Text>
+          <Text style={{ color: 'white' }}>{`${progress * 6}/7`}</Text>
         </View>
         <ProgressBar progress={progress} color="#4B40CE" style={{ width: "90%", height: 15, borderRadius: 10, left: 20 }} />
       </LinearGradient>
