@@ -1,11 +1,13 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, fontFamily} from 'react-native'
-import { useState } from 'react'
+import { useState , useContext } from 'react'
 import { CheckBox } from 'react-native-web'
 import { useNavigation } from '@react-navigation/native'
+import  { UserContext }  from "./UsersContext";
 
 export default function SignUp({route}) {
-
+  const { user  , setUser} = useContext(UserContext)
+ 
   const [text, onChangeText] = React.useState('Useless Text');
   const [ner, setNer] = useState('')
   const [phone, setPhone] = useState('')
@@ -13,11 +15,23 @@ export default function SignUp({route}) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const icon = "<"
+  const users =[ ner , password ,  email ,  phone]
+  
   const navigation = useNavigation();
   const OnPressBack=()=>{
     navigation.goBack();
   }
+  const handleLogin = () => { 
+    
+    if(ner != null && phone != null && email != null && password != null ){
+      setUser(users);
+      console.log(users);
+      navigation.navigate('BiyiinJin');
+    } else {
+      alert('aldaatai bn');
+    }
 
+  }
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -53,7 +67,7 @@ export default function SignUp({route}) {
         placeholder="Нууц үг"
         secureTextEntry={isSelected ? false : true}
       />
-      <TouchableOpacity style={styles.signBtn} onPress={() => navigation.navigate("BiyiinJin")} >
+      <TouchableOpacity style={styles.signBtn} onPress={() => handleLogin()} >
         <Text style={styles.signText}>Бүртгүүлэх</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate("Login")}>

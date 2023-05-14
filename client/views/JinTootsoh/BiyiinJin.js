@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image} from 'react-native'
-import { useState } from 'react'
+import { useState , useContext } from 'react'
 import { useNavigation } from '@react-navigation/native';
-
+import { UserContext } from '../UsersContext';
 export default function BiyiinJin({route}) {
-
+  
   const [text, onChangeText] = React.useState('Useless Text');
   const [date, setDate] = useState('')
   const [jin, setJin] = useState('')
@@ -13,8 +13,30 @@ export default function BiyiinJin({route}) {
   const [tseej, setTseej] = useState('')
   const [belhuus, setBelhuus] = useState('')
   const [buselhii, setBuselhii] = useState('')
+  const { user  } = useContext(UserContext)
   const icon = "<"
+
+  
   const navigation = useNavigation();
+  const handleLogin = () => { 
+    console.log(user);
+   var ner = user[0]
+   var password = user[1]
+   var email = user[2]
+   var phone = user[3]
+   fetch('http://10.0.2.2:3000/SignUp1' ,
+   {
+     method: 'post' ,
+     headers: { 'Content-Type': 'application/json'},
+     body: JSON.stringify({ner , email, password, phone , huis , tseej , belhuus, buselhii ,jin ,undur})
+   }
+    ).then(data => data.json()).then(data => {
+      alert('amjiltai burtgegdelee');
+ 
+      })
+  
+   
+  }
   const onPressBack = ()=> {
     navigation.goBack();
   }
@@ -71,7 +93,7 @@ export default function BiyiinJin({route}) {
         value={undur}
         placeholder="Бүсэлхийн тойрог"
       />
-      <TouchableOpacity style={styles.signBtn} onPress={() => navigation.navigate("BiyiinJin2")} >
+      <TouchableOpacity style={styles.signBtn} onPress={() => handleLogin()} >
         <Text style={styles.signText}>Дараах</Text>
       </TouchableOpacity>
     </View>

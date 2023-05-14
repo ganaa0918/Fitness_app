@@ -33,6 +33,31 @@ router.route('/Login').post(function (req, res) {
 
 });
 
+
+router.route('/SignUp1').post(function (req, res) {
+
+  async function run() {
+    const client = new MongoClient(uri1);
+    try {
+      const database = client.db('Fitness_app');
+      const Cus = database.collection('Customer');
+
+      console.log(req.body);
+      const result = await Cus.insertOne(req.body);
+      console.log(result);
+      res.send('{"success":true}');
+
+      console.log(`A document was inserted with the _id: ${result.insertedId}`);
+
+    } finally {
+
+      await client.close();
+    }
+  }
+  run().catch(console.dir);
+
+});
+
 router.route('/home').get(function (req, res) {
 
   async function run() {
