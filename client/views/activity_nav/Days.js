@@ -12,7 +12,6 @@ import {
   BarChart,
   PieChart,
   ProgressChart,
-  ContributionGraph,
   StackedBarChart,
 } from 'react-native-chart-kit';
 export default function Activity({navigation}) {
