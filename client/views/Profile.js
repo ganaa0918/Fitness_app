@@ -6,7 +6,7 @@ import img from '../assets/profile.png'
 import  { UserContext }  from "./UsersContext";
 export default function Profile({navigation}) {
   const [toggle, setToggle] = useState(false);
-  const { user } = useContext(UserContext)
+  const { user, setUser } = useContext(UserContext)
   const toggleColor = toggle ? '#4C956C' : '#DB4437';
   const onPressinfo = () =>{
     navigation.navigate("Info")
@@ -18,6 +18,7 @@ export default function Profile({navigation}) {
     navigation.navigate("Order")
   }
   const handleLogout = () =>{
+    setUser(null);
     navigation.navigate("Log")
   }
   return (

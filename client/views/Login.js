@@ -15,6 +15,7 @@ const Login = () => {
   const icon = "<"
 
   const handleLogin = () => {
+    const { setUser } = useContext(UserContext);
     //Todo zasah
     fetch('http://10.0.2.2:3000/Login' ,
     {

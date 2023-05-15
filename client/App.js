@@ -31,12 +31,13 @@ import Order from './views/Order';
 import Payment from './views/Payment';
 import Done from './views/Done';
 import News from './views/News';
+import { UserProvider } from './views/UsersContext';
 const Stack = createNativeStackNavigator();
 
 function App() {
   const [appIsReady, setAppIsReady] = useState(false);
   const [user, setUser] = useState();
-  const ProviderValue = useMemo(() => ({user , setUser}), [user , setUser]);
+  // const ProviderValue = useMemo(() => ({user , setUser}), [user , setUser]);
   useEffect(() => {
     const prepareApp = async () => {
       try {
@@ -60,7 +61,7 @@ function App() {
   }
 
   return (
-    <UserContext.Provider value = {{user , setUser}}>
+    <UserProvider>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Ehlel1" component={Ehlel1} options={{ headerShown: false, animation:'fade_from_bottom' }} />
@@ -93,7 +94,7 @@ function App() {
         <Stack.Screen name='News' component={News} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
-    </UserContext.Provider>
+    </UserProvider>
   );
 }
 
