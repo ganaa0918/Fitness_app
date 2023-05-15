@@ -42,7 +42,7 @@ const Login = () => {
       </TouchableOpacity>
       <Image source = {logo}/>
        <View >
-       <Text  style={{marginBottom:20}}>Нэвтрэх</Text>
+       <Text  style={{marginBottom:20, fontSize:25}}>Нэвтрэх</Text>
       </View>
       <TextInput
         style={styles.input}
