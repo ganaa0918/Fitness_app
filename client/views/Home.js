@@ -41,7 +41,7 @@ export default function Home() {
   const [progress, setProgress] = useState(0.5);
 
   const images = [
-    { id: "1", source: require("../assets/Rectangle20.png"), text: "Deadlift буюу үндсэн таталтыг зөв \n хийх 4 арга техник", screen:"Home" },
+    { id: "1", source: require("../assets/Rectangle20.png"), text: "Deadlift буюу үндсэн таталтыг зөв \n хийх 4 арга техник", screen:"News" },
     { id: "2", source: require("../assets/Rectangle21.png"), text: "Хүнсний ногоог хэрэглэх хамгийн \n эрүүл арга юу вэ?", screen:"Home" },
     { id: "3", source: require("../assets/Rectangle22.png"), text: "Сайн нүүрс ус гэж юу вэ", screen:"Home" },
   ];

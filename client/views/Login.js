@@ -1,9 +1,10 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, fontFamily} from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image} from 'react-native'
 import { useState , useContext} from 'react'
 import { CheckBox } from 'react-native-web'
 import { useNavigation } from '@react-navigation/native'
 import  { UserContext }  from "./UsersContext";
+import logo from '../assets/logo.png'
 
 const Login = () => {
   const navigation = useNavigation();
@@ -38,8 +39,9 @@ const Login = () => {
         style={styles.roundButton1}>
         <Text>{icon}</Text>
       </TouchableOpacity>
+      <Image source = {logo}/>
        <View >
-        <Text  >Нэвтрэх</Text>
+       <Text  style={{marginBottom:20}}>Нэвтрэх</Text>
       </View>
       <TextInput
         style={styles.input}
@@ -56,14 +58,13 @@ const Login = () => {
       />
       {/* TODO checkbox zasah */}
       {/* <View style={styles.checkboxContainer}>
-
         <CheckBox
           value={isSelected}
           onValueChange={setSelection}
           style={styles.check}
-        />
-        <Text style={styles.txt}>Нууц үг харах</Text>
-      </View> */}
+        /> */}
+        <TouchableOpacity onPress={() => setSelection(!isSelected)}><Text style={styles.see}>Нууц үг харах</Text></TouchableOpacity>
+      {/* </View> */}
       <TouchableOpacity style={styles.loginBtn} onPress={() => handleLogin()} >
         <Text style={styles.loginText}>Нэвтрэх</Text>
       </TouchableOpacity>
@@ -84,15 +85,18 @@ const styles = StyleSheet.create({
     left:44,
     top:120,
   },
-  bigTxt: {
-    fontSize:28,
+  see: {
+    color:'#9e9e9e',
+    position: 'absolute',
+    left: 44,
+    // Энийг өөрчлөөд байршлыг нь өөрчлөнө. засах гэсэн emulator no respond болоо чассО
+    top: 580
   },
   roundButton1: {
     width: 35,
     height: 35,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
     borderRadius: 100,
     borderColor: '#CFCFCF',
     borderWidth: 0.5,
