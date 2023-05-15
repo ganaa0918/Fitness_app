@@ -58,14 +58,13 @@ const Login = () => {
       />
       {/* TODO checkbox zasah */}
       {/* <View style={styles.checkboxContainer}>
-
         <CheckBox
           value={isSelected}
           onValueChange={setSelection}
           style={styles.check}
-        />
-        <Text style={styles.txt}>Нууц үг харах</Text>
-      </View> */}
+        /> */}
+        <TouchableOpacity onPress={() => setSelection(!isSelected)}><Text style={styles.see}>Нууц үг харах</Text></TouchableOpacity>
+      {/* </View> */}
       <TouchableOpacity style={styles.loginBtn} onPress={() => handleLogin()} >
         <Text style={styles.loginText}>Нэвтрэх</Text>
       </TouchableOpacity>
@@ -86,8 +85,12 @@ const styles = StyleSheet.create({
     left:44,
     top:120,
   },
-  bigTxt: {
-    fontSize:28,
+  see: {
+    color:'#9e9e9e',
+    position: 'absolute',
+    left: 44,
+    // Энийг өөрчлөөд байршлыг нь өөрчлөнө. засах гэсэн emulator no respond болоо чассО
+    top: 580
   },
   roundButton1: {
     width: 35,
