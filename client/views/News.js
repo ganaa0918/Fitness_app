@@ -1,24 +1,24 @@
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from "react-native";
-import image from "../assets/Rectangle20.png"
+import image from './SignUpZurag/news1.png'
 import cover from '../assets/dead.png'
+import { FontAwesome5 } from '@expo/vector-icons';
 
 export default function News() {
     const navigation = useNavigation();
-    const onPressback = () => {
+    const Goback = () => {
         navigation.goBack()
     }
-    const icon = "<"
     return (
         <ScrollView contentContainerStyle={styles.scrollContainer}>
             <View style={styles.container}>
-                <TouchableOpacity onPress={onPressback}
-                    style={styles.roundButton1}>
-                    <Text>{icon}</Text>
-                </TouchableOpacity>
+            <TouchableOpacity
+                style={styles.roundButton1}
+                onPress={Goback}>
+                <FontAwesome5 name='chevron-left' size={20} color='#7B7576' style={styles.textBig} />
+            </TouchableOpacity>
                 <View>
-
-                <Image course={image} style={styles.img}></Image>
+                    <Image source={image} style={styles.img} />
                 <Text styles={styles.head}>DEADLIFT БУЮУ ҮНДСЭН ТАТАЛТЫГ ЗӨВ ХИЙХ 4 АРГА ТЕХНИК</Text>
                 <Text style={styles.txt}>Deadlift (дээдлифт) буюу үндсэн таталтыг бодилдингийн ганц сайн дасгал гэж үздэг бөгөөд “Масс Нэмэх Хаан Дасгал” гэж өргөмжилдөг. Яагаад гэвэл энэ дасгалыг хийхэд маш олон булчин ажилладаг. Гэхдээ зүгээр л хамаг чадлаараа хүчлээд хийчихдэг дасгал биш юм. Энэ дасгалыг яаж зөв хийх талаар таван эксперт туршлагаа хуваалцаж байгааг хүргэе.
                     Үндсэн таталт нь биеийн дээд болон доод хэсгийг хоёуланг нь хөгжүүлэх хамгийн сайн дасгал мөн үү? Энэ дасгалыг хийгээд байвал бусад төрлийн дасгал хийснээс илүү их хүч чадал, масс нэмэх үү? Эдгээр асуултууд дээр хэн ч яв цав хариулт, дүгнэлтэнд хүрээгүй л байна. Гэвч, масс нэмэх зорилготой хүмүүст үндсэн таталт нь бэлтгэлийн зайлшгүй хэсэг байх хэрэгтэй гэдэг дээр хэн ч маргадаггүй. Хамгийн гол асуулт бол: Үндсэн таталтыг хэрхэн зөв хийх вэ?
@@ -31,7 +31,6 @@ export default function News() {
                 </Text>
 
                 <Image source={cover} style={styles.img}/>
-                
                 <Text style={styles.txt}>
                     ТЕХНИК 2: ХАГАС ҮНДСЭН ТАТАЛТ ХИЙХ
                     Үндсэн таталт нь бүтэн ба хагас гэсэн төрөлтэй байдаг. Бүтэн үндсэн таталт гэдэг нь штангийг газраас татахыг хэлдэг бол хагас үндсэн таталт гэдэг нь штангийг газраас биш харин блок буюу хайрцаг эсхүл штангны тавиур дээрээс татахыг хэлдэг.
@@ -65,30 +64,36 @@ const styles = StyleSheet.create({
         top: 60
     },
     img: {
-        marginTop: 10,
-        marginBottom: 10,
-        width:"100%"
+        paddingTop: 10,
+        marginBottom: 20,
+        marginLeft: 20
     },
     txt: {
         marginTop: 5,
         marginBottom: 5
     },
     roundButton1: {
-        width: 35,
-        height: 35,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 100,
+        position: "absolute",
+        width: 50,
+        height: 50,
+        left: 20,
+        top: 50,
         borderColor: '#CFCFCF',
-        borderWidth: 0.5,
+        borderRadius: 30,
+        backgroundColor: "#FFFF",
+        borderWidth:1
+      },
+      textBig: {
+        alignSelf: 'center',
         position: 'absolute',
-        left: 44,
-        top: 48
-    },
+        paddingTop: 15,
+      },
     container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
+        paddingTop: 100,
+
     },
 })
