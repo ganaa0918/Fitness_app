@@ -52,8 +52,8 @@ function App() {
     prepareApp();
   }, []);
 
-  const isPremiumUser = false;
-
+  const [isPremuimUser, setIsPremiumUser] = useState(false)
+  // const isPremuimUser = true;
   if (!appIsReady) {
     return null;
   }
@@ -75,7 +75,7 @@ function App() {
         <Stack.Screen name="BiyiinJin2" component={BiyiinJin2} options={{headerShown: false}} />
         <Stack.Screen name="BiyiinJin3" component={BiyiinJin3} options={{ headerShown: false }} />
         <Stack.Screen name="BiyiinJin4" component={BiyiinJin4} options={{ headerShown: false }} />
-        <Stack.Screen name="UserScreen"component={UserScreen} options={{ headerShown: false }} initialParams={{ isPremiumUser }}/>
+        <Stack.Screen name="UserScreen"component={UserScreen} options={{ headerShown: false }} initialParams={{ isPremuimUser }}/>
         <Stack.Screen name="PreTseej" component={PreTseej} options={{ headerShown: false }} />
         <Stack.Screen name="FreTseej" component={FreTseej} options={{ headerShown: false }} />
         <Stack.Screen name='MainContainer' component={MainContainer} options={{ headerShown: false }} />
@@ -86,7 +86,8 @@ function App() {
         <Stack.Screen name='Pushups' component={Pushups} options={{ headerShown: false }} />
         <Stack.Screen name='Rest' component={Rest} options={{ headerShown: false }} />
         <Stack.Screen name='Abs' component={Abs} options={{ headerShown: false }} />
-        <Stack.Screen name='Payment' component={Payment} options={{ headerShown: false }} />
+        {/* <Stack.Screen name='Payment' component={Payment} options={{ headerShown: false }} /> */}
+        <Stack.Screen name='Payment' component={Payment} options={{ headerShown: false }} initialParams={{ setIsPremiumUser}} />
         <Stack.Screen name='Done' component={Done} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>

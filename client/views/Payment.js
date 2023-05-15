@@ -4,12 +4,16 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
 import Qr from './SignUpZurag/qr.png'
 
-const Payment = () => {
+const Payment = ({ route }) => {
     const navigation = useNavigation();
+    const setIsPremiumUser = route.params?.setIsPremiumUser;
     const Goback = () => {
         navigation.goBack();
       }
       const pressPayment = () => {
+        if (setIsPremiumUser) {
+          setIsPremiumUser(true);
+        }
         navigation.navigate('Done');
       }
     return(
