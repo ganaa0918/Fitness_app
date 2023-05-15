@@ -13,14 +13,15 @@ router.route('/Login').post(function (req, res) {
     const client = new MongoClient(uri1);
     try {
       console.log(req.body);
-      const database = client.db('Fitness');
+      const database = client.db('Fitness_app');
       const Cus = database.collection('Customer');
       if (req.body.email != null && req.body.password != null) {
-        const query = { username: req.body.email };
+        const query = { email: req.body.email };
         console.log(query);
           const Customer = await Cus.findOne(query);
-        if(Customer.password === req.body.password ) { 
-          res.send( Customer._id);
+          console.log(Customer);
+        if(Customer.password == req.body.password ) { 
+          res.send( Customer);
         } }
       else {
         res.status(404).send(alert('amjiltgui'));
@@ -63,15 +64,16 @@ router.route('/home').get(function (req, res) {
   async function run() {
     const client = new MongoClient(uri1);
     try {
-      console.log(req.body);
+     
       const database = client.db('Fitness_app');
       const Cus = database.collection('Workout');
       query = { caption: 1 };
       const cursor = Cus.find(query);
-     
+       
       if ((await cursor.count()) === 0) {
         console.log("No documents found!");
-      }
+      } 
+      console.log("hi")
       console.log(await cursor.toArray());
       res.send(await cursor.toArray());
     } finally {
