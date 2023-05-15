@@ -88,7 +88,6 @@ function App() {
         <Stack.Screen name='Pushups' component={Pushups} options={{ headerShown: false }} />
         <Stack.Screen name='Rest' component={Rest} options={{ headerShown: false }} />
         <Stack.Screen name='Abs' component={Abs} options={{ headerShown: false }} />
-        {/* <Stack.Screen name='Payment' component={Payment} options={{ headerShown: false }} /> */}
         <Stack.Screen name='Payment' component={Payment} options={{ headerShown: false }} initialParams={{ setIsPremiumUser}} />
         <Stack.Screen name='Done' component={Done} options={{ headerShown: false }} />
         <Stack.Screen name='News' component={News} options={{ headerShown: false }} />
