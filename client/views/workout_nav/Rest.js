@@ -12,7 +12,7 @@ const onPressBack =()=>{
     navigation.goBack()
 }
 const onPressEnd =()=>{
-  navigation.navigate('MainContainer')
+  navigation.navigate('Finished')
 }
     useEffect(() => {
         const timer = setInterval(() => {

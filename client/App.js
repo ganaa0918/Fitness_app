@@ -2,6 +2,7 @@ import React, { useState, useEffect , useMemo} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as SplashScreen from 'expo-splash-screen';
+import { UserProvider } from './views/UsersContext';
 
 import MainContainer from './navigation';
 import Exercises from './views/workout_nav/Exercises';
@@ -31,7 +32,7 @@ import Order from './views/Order';
 import Payment from './views/Payment';
 import Done from './views/Done';
 import News from './views/News';
-import { UserProvider } from './views/UsersContext';
+import Finished from './views/Finished';
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -91,6 +92,7 @@ function App() {
         <Stack.Screen name='Payment' component={Payment} options={{ headerShown: false }} initialParams={{ setIsPremiumUser}} />
         <Stack.Screen name='Done' component={Done} options={{ headerShown: false }} />
         <Stack.Screen name='News' component={News} options={{ headerShown: false }} />
+        <Stack.Screen name='Finished' component={Finished} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
     </UserProvider>
