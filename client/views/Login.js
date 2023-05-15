@@ -1,9 +1,10 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, fontFamily} from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image} from 'react-native'
 import { useState , useContext} from 'react'
 import { CheckBox } from 'react-native-web'
 import { useNavigation } from '@react-navigation/native'
 import  { UserContext }  from "./UsersContext";
+import logo from '../assets/logo.png'
 
 const Login = () => {
   const navigation = useNavigation();
@@ -38,8 +39,9 @@ const Login = () => {
         style={styles.roundButton1}>
         <Text>{icon}</Text>
       </TouchableOpacity>
+      <Image source = {logo}/>
        <View >
-        <Text  >Нэвтрэх</Text>
+       <Text  style={{marginBottom:20}}>Нэвтрэх</Text>
       </View>
       <TextInput
         style={styles.input}
@@ -92,7 +94,6 @@ const styles = StyleSheet.create({
     height: 35,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
     borderRadius: 100,
     borderColor: '#CFCFCF',
     borderWidth: 0.5,

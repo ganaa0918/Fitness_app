@@ -30,6 +30,7 @@ import Abs from './views/workout_nav/Abs';
 import Order from './views/Order';
 import Payment from './views/Payment';
 import Done from './views/Done';
+import News from './views/News';
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -88,6 +89,7 @@ function App() {
         <Stack.Screen name='Abs' component={Abs} options={{ headerShown: false }} />
         <Stack.Screen name='Payment' component={Payment} options={{ headerShown: false }} />
         <Stack.Screen name='Done' component={Done} options={{ headerShown: false }} />
+        <Stack.Screen name='News' component={News} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
     </UserContext.Provider>
