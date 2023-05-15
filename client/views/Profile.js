@@ -26,7 +26,7 @@ export default function Profile({navigation}) {
     <View style={styles.container}>
     <View style={styles.Alignbetween2}>
         <View style={{ flexDirection: 'column', marginLeft: 20, marginTop:10 }}>
-          <Text style={styles.text4}>{user}</Text>
+          <Text style={styles.text4}>{user.ner}</Text>
           <Text style={styles.text3}>Lose a Fat Program</Text>
         </View>
         <View style={styles.back}>

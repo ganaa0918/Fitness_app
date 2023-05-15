@@ -3,9 +3,11 @@ import {View, Text, StyleSheet, TouchableOpacity, Image, ScrollView} from 'react
 import { FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
 import img from '../../assets/profile.png'
-
+import {  useContext} from 'react'
+import  { UserContext }  from "../UsersContext";
 
 const Info = () => {
+    const { user } = useContext(UserContext)
     const navigation = useNavigation();
 const Goback = () => {
     navigation.goBack();
@@ -22,14 +24,14 @@ const Goback = () => {
             <View style={styles.back}>
                 <Image source={img} style={styles.image} />
             </View>
-            <Text style={styles.Profilename}>Vander</Text>
+            <Text style={styles.Profilename}>{user.ner}</Text>
             <View style={styles.intro}>
                 <View style={styles.between}>
-                    <Text style={styles.text1}>180cm</Text>
+                    <Text style={styles.text1}>{user.undur}</Text>
                     <Text>Өндөр</Text>
                 </View>
                 <View style={styles.between}>
-                    <Text style={styles.text1}>65кг</Text>
+                    <Text style={styles.text1}>{user.jin}</Text>
                     <Text>Жин</Text>
                 </View>
                 <View style={styles.between}>
@@ -40,25 +42,19 @@ const Goback = () => {
             <View style={styles.Msg}>
                 <View style={styles.textuud}>
                 <Text style={styles.text6}>Имейл</Text>
-                <Text style={{color: "gray"}}>B.tuguldur1202@gmail.com</Text>
+                <Text style={{color: "gray"}}>{user.email}</Text>
                 </View>
             </View>
             <View style={styles.Msg1}>
                 <View style={styles.textuud}>
                 <Text style={styles.text6}>Утасны дугаар</Text>
-                <Text style={{color: "gray"}}>99179845</Text>
+                <Text style={{color: "gray"}}>{user.phone}</Text>
                 </View>
             </View>
             <View style={styles.Msg2}>
                 <View style={styles.textuud}>
                 <Text style={styles.text6}>Нууц үг</Text>
                 <Text style={{color: "gray"}}>********</Text>
-                </View>
-            </View>
-            <View style={styles.Msg3}>
-                <View style={styles.textuud}>
-                <Text style={styles.text6}>Төрсөн өдөр</Text>
-                <Text style={{color: "gray"}}>2002-12-02</Text>
                 </View>
             </View>
           </View>
