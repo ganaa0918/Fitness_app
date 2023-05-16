@@ -15,7 +15,7 @@ const Login = () => {
   const icon = "<"
 
   const handleLogin = () => {
-    const { setUser } = useContext(UserContext);
+    
     //Todo zasah
     fetch('http://10.0.2.2:3000/Login' ,
     {
@@ -25,7 +25,9 @@ const Login = () => {
     }
      ).then(data => data.json()).then(data => {
       navigation.navigate("MainContainer")
-      setUser(data);
+      const d = [ data.ner , data.password ,  data.email ,  data.phone, data.huis, data.tseej , data.belhuus , data.jin ,data.undur , data.caption ]
+      setUser(d);
+      console.log(d);
        })
       // todo catch hiiged aldaanii message goy gargad bolh
       // todo newterch orood notf message goy gargdag bolh

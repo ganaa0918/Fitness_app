@@ -19,10 +19,18 @@ import  { UserContext }  from "./UsersContext";
 export default function Home() {
   const navigation = useNavigation();
   const { user } = useContext(UserContext)
+  const [file, setFile] = useState([])
+  var caption = 3
   useEffect(() => {
-    fetch('http://10.0.2.2:3000/home').then(data => data.json()).then(data => {
+    fetch('http://10.0.2.2:3000/home' 
+ 
+     ).then(data => data.json()).then(data => {
 
-    console.log(data);
+   
+    setFile(data);
+   
+    console.log(file);
+
     }
     ).catch(error => {console.log(error);});
     navigation.setOptions({
@@ -113,7 +121,7 @@ const femaleData = [
   },
 ];
 const gender = 'male';
-const userData = gender === 'male' ? maleData : femaleData;
+const userData = file;
 
   const renderCarouselItem = (item) => (
     <TouchableOpacity
@@ -159,15 +167,18 @@ const userData = gender === 'male' ? maleData : femaleData;
         ))}
       </Swiper>
       <View style={styles.dasgaluudContainer}>
-      <Text style={styles.dasgaluudText}>Энгийн дасгалууд</Text>
+      <Text style={styles.dasgaluudText}>Энгийн дасгалууд  </Text>
       <Image source={img1} />
      <View style={styles.dailycontainer}>
       {userData.map((item) => (
-        <View key={item.id} style={styles.Alignbetween2}>
-          <Image source={item.image} />
+        <View key={item._id} style={styles.Alignbetween2}>
+            
+            <Image source={img6} />
           <View style={{ flexDirection: 'column', marginLeft: 20 }}>
-            <Text style={styles.text4}>{item.title}</Text>
-            <Text style={styles.text3}>{item.duration}</Text>
+          
+    
+            <Text style={styles.text4}>{item.name}</Text>
+            <Text style={styles.text3}>{item.time}</Text>
           </View>
           <View style={{ flex: 1, alignItems: 'flex-end' }}>
             <TouchableOpacity

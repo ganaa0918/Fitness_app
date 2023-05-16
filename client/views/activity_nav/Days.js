@@ -23,7 +23,7 @@ export default function Activity({navigation}) {
           marginVertical: 8,
           borderRadius: 16,
           fontSize: 20
-        }}   >Activity screen</Text>
+        }}   >Долоо хоногийн шатаасан калори</Text>
             <BarChart
         data={{
           labels: ['January', 'February', 'March', 'April', 'May', 'June'],
@@ -35,7 +35,7 @@ export default function Activity({navigation}) {
         }}
         width={Dimensions.get('window').width - 16}
         height={220}
-        yAxisLabel={'Rs'}
+       
         chartConfig={{
           backgroundColor: '#1cc910',
           backgroundGradientFrom: '#eff3ff',

@@ -20,22 +20,49 @@ export default function BiyiinJin({route}) {
   const navigation = useNavigation();
   const handleLogin = () => { 
     console.log(user);
+    var caption
    var ner = user[0]
    var password = user[1]
    var email = user[2]
    var phone = user[3]
+   var Ccaption =  parseInt(tseej) + parseInt(belhuus) + parseInt(jin) + parseInt(undur) + parseInt(buselhii)
+   console.log(Ccaption);
+   if(Ccaption > 30 ) { 
+     caption = 3
+   } else if(Ccaption < 30 && Ccaption > 10 ) { 
+     caption = 2
+   } else { 
+     caption = 1
+   }
+   console.log(caption);
+   user[4] = huis
+   user[5] = tseej 
+   user[6] = belhuus
+   user[7] = jin 
+   user[8] = undur
+   user[9] = caption
    fetch('http://10.0.2.2:3000/SignUp1' ,
    {
      method: 'post' ,
      headers: { 'Content-Type': 'application/json'},
-     body: JSON.stringify({ner , email, password, phone , huis , tseej , belhuus, buselhii ,jin ,undur})
+     body: JSON.stringify({ner , email, password, phone , huis , tseej , belhuus, buselhii ,jin ,undur, caption})
    }
     ).then(data => data.json()).then(data => {
       alert('amjiltai burtgegdelee');
+      navigation.navigate('BiyiinJin4')
       })
+    alert("hi");
+    alert(user);
   }
   const PressNext = () =>{
-    navigation.navigate('BiyiinJin2')
+    user[4] = huis
+    user[5] = tseej 
+    user[6] = belhuus
+    user[7] = jin 
+    user[8] = undur
+    navigation.navigate('BiyiinJin4')
+    alert("hi");
+    alert(user);
   }
   const onPressBack = ()=> {
     navigation.goBack();
@@ -94,7 +121,7 @@ export default function BiyiinJin({route}) {
         placeholder="Бүсэлхийн тойрог"
       />
       {/* <TouchableOpacity style={styles.signBtn} onPress={() => handleLogin()} > */}
-      <TouchableOpacity style={styles.signBtn} onPress={PressNext} >
+      <TouchableOpacity style={styles.signBtn} onPress={handleLogin} >
         <Text style={styles.signText}>Дараах</Text>
       </TouchableOpacity>
     </View>

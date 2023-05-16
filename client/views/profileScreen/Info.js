@@ -24,14 +24,14 @@ const Goback = () => {
             <View style={styles.back}>
                 <Image source={img} style={styles.image} />
             </View>
-            <Text style={styles.Profilename}>{user.ner}</Text>
+            <Text style={styles.Profilename}>{user[0]}</Text>
             <View style={styles.intro}>
                 <View style={styles.between}>
-                    <Text style={styles.text1}>{user.undur}</Text>
+                    <Text style={styles.text1}>{user[8]}</Text>
                     <Text>Өндөр</Text>
                 </View>
                 <View style={styles.between}>
-                    <Text style={styles.text1}>{user.jin}</Text>
+                    <Text style={styles.text1}>{user[7]}</Text>
                     <Text>Жин</Text>
                 </View>
                 <View style={styles.between}>
@@ -42,13 +42,13 @@ const Goback = () => {
             <View style={styles.Msg}>
                 <View style={styles.textuud}>
                 <Text style={styles.text6}>Имейл</Text>
-                <Text style={{color: "gray"}}>{user.email}</Text>
+                <Text style={{color: "gray"}}>{user[3]}</Text>
                 </View>
             </View>
             <View style={styles.Msg1}>
                 <View style={styles.textuud}>
                 <Text style={styles.text6}>Утасны дугаар</Text>
-                <Text style={{color: "gray"}}>{user.phone}</Text>
+                <Text style={{color: "gray"}}>{user[4]}</Text>
                 </View>
             </View>
             <View style={styles.Msg2}>
