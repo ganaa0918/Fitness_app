@@ -64,18 +64,52 @@ router.route('/home').get(function (req, res) {
   async function run() {
     const client = new MongoClient(uri1);
     try {
+      const database = client.db("Fitness_app");
+      const movies = database.collection("Workout");
+      // query for movies that have a runtime less than 15 minutes
      
-      const database = client.db('Fitness_app');
-      const Cus = database.collection('Workout');
-      query = { caption: 1 };
-      const cursor = Cus.find(query);
-       
+      const caption = 2
+      const query = { caption: caption };
+
+      const cursor = movies.find(query);
+      
+      // print a message if no documents were found
       if ((await cursor.count()) === 0) {
         console.log("No documents found!");
-      } 
-      console.log("hi")
-      console.log(await cursor.toArray());
+      }
+     
       res.send(await cursor.toArray());
+
+    } finally {
+      await client.close();
+    }
+  }
+  run().catch(console.dir);
+
+});
+
+router.route('/workout').get(function (req, res) {
+
+  async function run() {
+    const client = new MongoClient(uri1);
+    try {
+      const database = client.db("Fitness_app");
+      const movies = database.collection("Workout");
+      // query for movies that have a runtime less than 15 minutes
+     
+      const caption = 2
+      const query = { caption: caption };
+
+      const cursor = movies.find(query);
+      
+      // print a message if no documents were found
+      if ((await cursor.count()) === 0) {
+        console.log("No documents found!");
+      }
+    
+      res.send(await cursor.toArray());
+      
+
     } finally {
       await client.close();
     }

@@ -1,16 +1,17 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image} from 'react-native'
-import { useState } from 'react'
+import { useState , useContext} from 'react'
 import { CheckBox } from 'react-native-web'
 import jin4 from "../SignUpZurag/Biyiinjin4.png"
 import { useNavigation } from '@react-navigation/native'
-
+import { UserContext } from '../UsersContext';
 export default function BiyiinJin4({route}) {
   const [text, onChangeText] = React.useState('Useless Text');
   const [date, setDate] = useState('')
   const [jin, setJin] = useState('')
   const [undur, setUndur] = useState('')
   const [huis, setHuis] = useState('')
+  const { user  } = useContext(UserContext)
   const icon = "<"
   const navigation = useNavigation();
   const onPressBack = ()=> {
@@ -21,9 +22,9 @@ export default function BiyiinJin4({route}) {
     <View style={styles.container}>
         <Image source={jin4} style={{width:330,height:430}} />
       <View >
-        <Text style={styles.GoyGarchig} >Сайн уу, ...</Text>
+        <Text style={styles.GoyGarchig} >Сайн уу, {user[0]}</Text>
         <Text style={styles.txt} >Бүх мэдээлэл амжилттай </Text>
-        <Text style={styles.txt1} >бүртгэгдлээ.</Text>
+        <Text style={styles.txt1} >бүртгэгдлээ. Нэвтэрнэ үү </Text>
       </View>
       <TouchableOpacity
         style={styles.roundButton1} onPress={onPressBack}>

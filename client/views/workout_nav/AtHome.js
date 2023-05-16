@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useState , useEffect} from 'react';
 import { View, Image, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import Hol from './athome_pics/hol.png';
 import Tseej from './athome_pics/tseej.png';
@@ -6,12 +6,20 @@ import Nuruu from './athome_pics/nuruu.png';
 import Gedes from './athome_pics/gedes.png';
 import Costum from './athome_pics/athome_costom.png';
 import { useNavigation } from '@react-navigation/native';
+
 function AtHome () {
 const navigation= useNavigation();
-
+const [user , setUser] = useState([]);
   const goToSecondScreen = () => {
     navigation.navigate('Exercises');
   };
+  useEffect(()=>{
+    fetch('http://10.0.2.2:3000/workout').then(data => data.json()).then(data => {
+      console.log(data);
+      setUser(user);
+      
+    }).catch(error => { console.log("error:", error) });
+})
   return (
     <View style={styles.container}>
       <View style={styles.fullWidth}>
@@ -32,6 +40,7 @@ const navigation= useNavigation();
       <View >
         <Text style={styles.text2}>Body focus</Text>
       </View>
+      {user }
       <View style={styles.twoColumn}>
         <TouchableOpacity style={styles.image} onPress={goToSecondScreen}>
         <Image source={Tseej}  />

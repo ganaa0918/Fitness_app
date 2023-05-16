@@ -25,7 +25,7 @@ export default function Activity({navigation}) {
           marginVertical: 8,
           borderRadius: 16,
           fontSize: 20
-        }}   >Activity screen</Text>
+        }}   >Жингийн график</Text>
         <LineChart
         data={{
           labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' , 'Sun'],
@@ -43,7 +43,7 @@ export default function Activity({navigation}) {
           backgroundGradientFrom: '#eff3ff',
           backgroundGradientTo: '#efefef',
           decimalPlaces: 2,
-          color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+          color: (opacity = 0.1) => `rgba(100, 100,100, ${opacity})`,
           style: {
             borderRadius: 16,
           },
@@ -60,7 +60,7 @@ export default function Activity({navigation}) {
           marginVertical: 8,
           borderRadius: 16,
           fontSize: 20
-        }}   >Activity screen</Text>
+        }}   >Шатаасан калори</Text>
         <LineChart
         data={{
           labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' , 'Sun'],
@@ -74,11 +74,11 @@ export default function Activity({navigation}) {
         width={Dimensions.get('window').width - 16}
         height={220}
         chartConfig={{
-          backgroundColor: '#1cc910',
+          backgroundColor: '#14d0bf',
           backgroundGradientFrom: '#eff3ff',
           backgroundGradientTo: '#efefef',
-          decimalPlaces: 2,
-          color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+          decimalPlaces: 1,
+          color: (opacity = 0.1) => `rgba(100, 100,100, ${opacity})`,
           style: {
             borderRadius: 16,
           },

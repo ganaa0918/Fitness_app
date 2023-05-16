@@ -17,6 +17,12 @@ export default function Profile({navigation}) {
   const onPressPro = () =>{
     navigation.navigate("Order")
   }
+  const onPressWorkout = () => { 
+    navigation.navigate("Costumize")
+  }
+  const onPressCalendar = () => { 
+    navigation.navigate("Activity")
+  }
   const handleLogout = () =>{
     setUser(null);
     navigation.navigate("Log")
@@ -27,7 +33,7 @@ export default function Profile({navigation}) {
     <View style={styles.container}>
     <View style={styles.Alignbetween2}>
         <View style={{ flexDirection: 'column', marginLeft: 20, marginTop:10 }}>
-          <Text style={styles.text4}>{user.ner}</Text>
+          <Text style={styles.text4}>{user[0]}</Text>
           <Text style={styles.text3}>Lose a Fat Program</Text>
         </View>
         <View style={styles.back}>
@@ -52,7 +58,7 @@ export default function Profile({navigation}) {
             <FontAwesome5 name='file-invoice' size={20} color='#92A5FD' style={{paddingTop:5}} solid/>
               <Text style={styles.text5}>Хэрэглэгчийн календарь</Text>
             <View style={{ flex: 1, alignItems: 'flex-end' }}>
-              <TouchableOpacity style={styles.ooo}>
+              <TouchableOpacity style={styles.ooo}  onPress={onPressCalendar}>
               <FontAwesome5 name='chevron-right' size={20} color='gray' solid/>
               </TouchableOpacity>
             </View>
@@ -70,7 +76,7 @@ export default function Profile({navigation}) {
             <FontAwesome5 name='chart-bar' size={20} color='#92A5FD' style={{paddingTop:5}} solid/>
               <Text style={styles.text5}>Миний дасгалын төлөвлгөө</Text>
             <View style={{ flex: 1, alignItems: 'flex-end' }}>
-              <TouchableOpacity style={styles.ooo}>
+              <TouchableOpacity style={styles.ooo}   onPress={onPressWorkout}>
               <FontAwesome5 name='chevron-right' size={20} color='gray' solid/>
               </TouchableOpacity>
             </View>
