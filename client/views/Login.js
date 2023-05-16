@@ -86,13 +86,13 @@ const styles = StyleSheet.create({
     left:44,
     top:120,
   },
-  see: {
-    color:'#9e9e9e',
-    position: 'absolute',
-    left: 44,
-    // Энийг өөрчлөөд байршлыг нь өөрчлөнө. засах гэсэн emulator no respond болоо чассО
-    top: 580
-  },
+  // see: {
+  //   color:'#9e9e9e',
+  //   position: 'absolute',
+  //   left: 44,
+  //   // Энийг өөрчлөөд байршлыг нь өөрчлөнө. засах гэсэн emulator no respond болоо чассО
+  //   top: 500
+  // },
   roundButton1: {
     width: 35,
     height: 35,

@@ -114,7 +114,9 @@ export default function Profile({navigation}) {
 const styles = StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
-    paddingBottom: 0,
+    paddingBottom:100,
+    backgroundColor:"white"
+
   },
   container: {
     flex: 1,
@@ -231,6 +233,7 @@ const styles = StyleSheet.create({
     shadowOffset:{ width:5, height:3},
     ShadowOpacity: 0.5,
     shadowRadius:20,
-    elevation: 5
+    elevation: 5,
+    paddingBottom:20
   },
 })
